@@ -1,15 +1,17 @@
 .hero-typing.hero-animate{
-    width: 21px;
+    width: 21ch;
     border-right: 0.1em solid black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
     animation: type 2.5s steps(20),
     writer 1s infinite alternate,
-    delete 0.5s, steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
+    delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
 }
 .hero-typing.hero-animate::before{
-    content: "Hello, I'm Christine";
+    content: "Hello, I'm Dave Gantge";
     animation: type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
 }
 
@@ -23,22 +25,22 @@
 }
 @keyframes type2{
     from{
-        width: 16ch;
-        content: "Hello, I'm Chrissy.";
+        width: 19ch;
+        content: "Hello, I'm Dave Gangte.";
     }
     to{
-        width: 20ch;
-        content: "Hello, I'm Chrissy.";
+        width: 23ch;
+        content: "Hello, I'm Dave Gangte.";
     }
 }
 @keyframes type3 {
     from {
-      width: 20ch;
-      content: "Hello, I'm Chrissy. Welcome to my Website!"
+      width: 23ch;
+      content: "Hello, I'm Dave Gangte. Welcome to my Website!"
     }
     to {
-      width: 42ch;
-      content: "Hello, I'm Chrissy. Welcome to my Website!"
+      width: 46ch;
+      content: "Hello, I'm Dave Gangte. Welcome to my Website!"
     }
   }
   
@@ -53,6 +55,6 @@
       width: 21ch;
     }
     to {
-      width: 16ch;
+      width: 19ch;
     }
   }

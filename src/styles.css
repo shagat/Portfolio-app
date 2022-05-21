@@ -7,6 +7,16 @@ You can add global styles to this file, and also import other style files
   padding: 0;
   box-sizing: border-box;
 }
+
+:root{
+    --primary-color:#E0DDAA;
+    --secondary-color:#203239;
+    --dark-color:#141E27;
+    --light-color:#EEEDDE;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
 body{
   width: 100vw;
   height: 100vh;
@@ -27,7 +37,7 @@ body{
     scroll-snap-align: start;
     scroll-snap-stop: always;
     scroll-margin-top: 45px;
-    /* align-items: center;
-    justify-content: center; */
+    align-items: center;
+    justify-content: center;
     background-color: bisque;
 }
