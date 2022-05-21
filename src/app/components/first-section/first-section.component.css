@@ -1,18 +1,56 @@
+
+.hero-first-container{
+  display: flex;
+  width: 100vw;
+  margin: 10px;
+  padding: 10px;
+  flex-direction: column;
+  /* flex: 1 1; */
+  justify-content:space-evenly;
+  /* overflow-y: hidden; */
+}
+
+.img-class{
+  margin-top: 10px;
+  justify-self:flex-end;
+  align-self: center;
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-top: 30px;
+}
+
+.hero-first-container img{
+  height: 550px;
+  width: 250px;
+}
+
+.abc{
+  justify-self: flex-end;
+  align-self: center;
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  
+}
+
 .hero-typing.hero-animate{
-    width: 21ch;
-    border-right: 0.1em solid black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2em;
-    animation: type 2.5s steps(20),
-    writer 1s infinite alternate,
-    delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
+  /* flex-basis: 100%; */
+  width: 21ch;
+  border-right: 0.1em solid var(--mid-light-color);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+  animation: type 2s steps(20),
+  writer 1s infinite alternate,
+  delete 0.5s steps(5) 2.5s, type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
 }
 .hero-typing.hero-animate::before{
-    content: "Hello, I'm Dave Gantge";
-    animation: type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 6s forwards;
+  color: var(--mid-light-color);
+  content: "Hello, I'm Dave Gantge";
+  animation: type2 1s steps(4) 3s forwards, type3 3s steps(22,end) 5s forwards;
 }
 
 @keyframes type{
