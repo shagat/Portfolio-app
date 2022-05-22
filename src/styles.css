@@ -41,4 +41,26 @@ section{
   scroll-margin-top: 60px;
   margin-top: 45px;
 }
+a{
+  text-decoration: none;
+}
 
+/* Buttons */
+.btn{
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: var(--mid-beige-color);
+  color: var(--dark-color);
+  border: none;
+  border-radius: 99px;
+}
+
+.btn-outline{
+  background-color: transparent;
+  border: 1px solid var(--mid-beige-color);
+}
+
+.btn:hover{
+  transform: scale(.98);
+}

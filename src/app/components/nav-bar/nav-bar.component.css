@@ -1,14 +1,14 @@
 .nav-container{
-    position:absolute;
+    position:fixed;
     left: 0;
     top: 0;
     right: 0;
     bottom: 1;
-    /* width: 100%;*/
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .tabs{
@@ -42,6 +42,9 @@ input[type="radio"]{
 
 input[type="radio"]:checked + label{
     color: var(--light-color);
+}
+input[type="radio"]:hover + label{
+    transform: scale(0.90);
 }
 input[id="radio-1"]:checked ~ .glider {
     transform: translateX(0);
