@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  private togglePageKey : number = 1;
+
+  subscription!:Subscription;
+
+  constructor(private uiService:UiService) {
+    this.subscription = this.uiService
+    .onToggle()
+    .subscribe(
+      (value) => (this.togglePageKey = value)
+      )
+   }
 
   ngOnInit(): void {
   }
 
+  toggleCheckedMain() {
+    this.uiService.toggleCheckedMain();
+  }
+  toggleCheckedWork() {
+    this.uiService.toggleCheckedWork();
+  }
+  toggleCheckedContact() {
+    this.uiService.toggleCheckedContact();
+  }
 }

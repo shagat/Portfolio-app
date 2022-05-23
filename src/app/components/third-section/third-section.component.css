@@ -17,13 +17,14 @@
     display: flex;
     color: var(--mid-beige-color);
     align-self: flex-start;
-    padding-top: 15px;
+    padding: 20px;
 }
 
 .third-hero .right-quote{
     display: flex;
     color: var(--mid-beige-color);
     align-self: flex-end;
+    padding: 20px;
 }
 
 .third-section-container .about-me-heading{
@@ -38,7 +39,7 @@
 }
 
 .third-section-container .about-me-paragraph{
-    padding-top: 15px;
+    padding: 20px;
     color: var(--mid-beige-color);
     text-align: center;
     text-indent: 20px;
