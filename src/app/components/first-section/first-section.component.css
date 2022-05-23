@@ -1,11 +1,12 @@
 
 .hero-first-container{
   display: relative;
-  width: 980px;
+  width: 960px;
   height: 740px;
   margin: 40px;
   padding: 10px;
   border: 2px solid var(--mid-light-color);
+  margin-top: 3em;
   
 }
 
