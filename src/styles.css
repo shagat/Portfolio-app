@@ -26,6 +26,7 @@ html{
 
 body{
   background-color: var(--dark-color);
+  font-family: 'Courier New', Courier, monospace;
   /* min-width: 1024px; */
   /* max-width: 1440px; */
 }
@@ -62,5 +63,6 @@ a{
 }
 
 .btn:hover{
-  transform: scale(.98);
+  background-color: #E0DDAA;
 }
+

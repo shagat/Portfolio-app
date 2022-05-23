@@ -16,7 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 10em;
-  border: .5px solid var(--mid-beige-color);
+  border: .5px solid var(--mid-light-color);
   z-index: 0;
 
 }
@@ -35,6 +35,7 @@
   transform: translateX(-50%);
   scale: 2;
   color: var(--mid-beige-color);
+  cursor: pointer;
   animation: pointDown 3s infinite linear;
 }
 
@@ -49,7 +50,6 @@
 .hero-typing.hero-animate{
   width: 21ch;
   border-right: 0.1em solid var(--mid-light-color);
-  font-family: 'Courier New', Courier, monospace;
   font-size: 1.5em;
   animation: type 2s steps(20),
   writer 1s infinite alternate,

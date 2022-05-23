@@ -1,4 +1,4 @@
-import { Component, OnInit, Host } from '@angular/core';
+import { Component, OnInit, Host, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-first-section',
@@ -12,4 +12,7 @@ constructor() {
 
   ngOnInit(): void {}
   
+  scrollDown(){
+    console.log("Hello")
+  }
 }
