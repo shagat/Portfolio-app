@@ -1,0 +1,45 @@
+.third-section-container{
+    display: relative;
+    width: 960px;
+    height: 740px;
+    margin: 40px;
+    padding: 10px;
+    border: 2px solid var(--mid-light-color);
+    margin-top: 3em;
+  }
+.third-hero{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6em;
+    padding: 2em;
+}
+.third-hero .left-quote{
+    display: flex;
+    color: var(--mid-beige-color);
+    align-self: flex-start;
+    padding-top: 15px;
+}
+
+.third-hero .right-quote{
+    display: flex;
+    color: var(--mid-beige-color);
+    align-self: flex-end;
+}
+
+.third-section-container .about-me-heading{
+    width: 30%;
+    align-self: center;
+    color:  var(--mid-light-color);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-radius: 1px;
+    text-align: center;
+    /* text-decoration-line: underline; */
+}
+
+.third-section-container .about-me-paragraph{
+    padding-top: 15px;
+    color: var(--mid-beige-color);
+    text-align: center;
+    text-indent: 20px;
+}

@@ -10,33 +10,36 @@
 .second-hero{
     display: flex;
     flex-direction: column;
-    margin-top: 7em;
+    margin-top: 6em;
+    padding: 2em;
 }
 .second-hero .left-quote{
     display: flex;
-    color: var(--mid-light-color);
-    /* padding-top: 50px; */
-    /* justify-self: flex-end; */
+    color: var(--mid-beige-color);
     align-self: flex-start;
+    padding-top: 15px;
 }
 
 .second-hero .right-quote{
     display: flex;
-    color: var(--mid-light-color);
-    /* padding-top: 50px; */
-    /* justify-self: flex-end; */
+    color: var(--mid-beige-color);
     align-self: flex-end;
 }
 
 .second-section-container .about-me-heading{
-    color: var(--mid-light-color);
+    width: 30%;
+    align-self: center;
+    color:  var(--mid-light-color);
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-radius: 1px;
     text-align: center;
-    text-indent: 20px;
+    /* text-decoration-line: underline; */
 }
 
 .second-section-container .about-me-paragraph{
-    padding-top: 5px;
-    color: var(--mid-light-color);
+    padding-top: 15px;
+    color: var(--mid-beige-color);
     text-align: center;
     text-indent: 20px;
 }
