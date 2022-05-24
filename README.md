@@ -2,26 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-## Development server
+This is an app that I created for my portfolio and so as to 
+learn about Angular. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Its a very simple app that encompasses some of the features 
+that i learned in Angular.
 
-## Code scaffolding
+There are three main pages - Home, Works and Contact.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##Home
+Its landing page with a scroll down feature that delves more
+about me.
+Some key features here are:-
+  - the typing animation that is created with css and ts.
+  - the scrolling slide functionality.
 
-## Build
+##Works
+Its the page where i showcase some of the pojects that i have
+worked on.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+##Contact
+Its a page where there are information that will help people 
+who wants to reach me.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
