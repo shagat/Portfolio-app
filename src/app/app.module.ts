@@ -11,11 +11,12 @@ import { SecondSectionComponent } from './components/second-section/second-secti
 import { ThirdSectionComponent } from './components/third-section/third-section.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { WorksFirstSectionComponent } from './components/works-first-section/works-first-section.component';
-import { WorksSecondSectionComponent } from './components/works-second-section/works-second-section.component';
+import { ContactFirstSectionComponent } from './components/contact-first-section/contact-first-section.component';
 
 const appRoutes : Routes = [
   {path: '', component : FirstSectionComponent},
-  {path: 'works', component:WorksFirstSectionComponent}
+  {path: 'works', component:WorksFirstSectionComponent},
+  {path: 'contact', component:ContactFirstSectionComponent}
 ]
 
 @NgModule({
@@ -27,7 +28,7 @@ const appRoutes : Routes = [
     ThirdSectionComponent,
     NavBarComponent,
     WorksFirstSectionComponent,
-    WorksSecondSectionComponent
+    ContactFirstSectionComponent
   ],
   imports: [
     BrowserModule,
