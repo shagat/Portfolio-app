@@ -10,18 +10,18 @@ that i learned in Angular.
 
 There are three main pages - Home, Works and Contact.
 
-##Home
+# Home
 Its landing page with a scroll down feature that delves more
 about me.
 Some key features here are:-
   - the typing animation that is created with css and ts.
   - the scrolling slide functionality.
 
-##Works
+# Works
 Its the page where i showcase some of the pojects that i have
 worked on.
 
-##Contact
+# Contact
 Its a page where there are information that will help people 
 who wants to reach me.
 
