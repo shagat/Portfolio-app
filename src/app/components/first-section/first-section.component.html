@@ -1,8 +1,22 @@
-<section *ngIf="togglePageKey == 1">
+<section>
         <div class="hero-first-container">
-        <div class="img-class"><img src="../../../assets/jocelyn-morales-iWfp0ofCNt8-unsplash.jpg" alt="Rishab Mathew"></div>
-        <div class="typing-animate-1"><div class="hero-typing hero-animate"></div></div>
-        <!-- <div class="typing-animate-2"><div class="hero-typing-2 hero-animate-2"></div></div> -->
-        <a href="#" class="scroll-down-btn"></a><i class="fa-solid fa-angles-down" (click)="scrollDown()"></i>  
+                <!-- hero image -->
+                <div class="img-class">
+                        <img src="../../../assets/jocelyn-morales-iWfp0ofCNt8-unsplash.jpg" alt="Rishab Mathew">
+                </div>
+                <!-- Animation class -->
+                <div class="typing-animate-1">
+                        <div class="hero-typing hero-animate" 
+                        (click)="typingAnimateToggle()" 
+                        [ngClass]="{'hero-typing hero-animate': clickAnimate == true}">
+                </div>
+        </div>
+        <!-- scroll Down button -->
+        <a href="#" class="scroll-down-btn"></a><i class="fa-solid fa-angles-down" (click)="scrollDown(secondSection)"></i>
 </div>
 </section>
+<!-- Trasition to second section link-->
+<div class="second-section-container" #secondSection>
+        <app-second-section></app-second-section>
+</div>
+<app-third-section></app-third-section>

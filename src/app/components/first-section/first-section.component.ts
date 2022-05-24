@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UiService } from 'src/app/services/ui.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-first-section',
@@ -8,20 +6,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./first-section.component.css']
 })
 export class FirstSectionComponent implements OnInit {
-  togglePageKey : number = 1;
-  subscription! : Subscription;
-
-constructor(private uiService:UiService) {
-  this.subscription = this.uiService
-    .onToggle()
-    .subscribe(
-      (value) => (this.togglePageKey = value)
-      )
+clickAnimate : boolean = true;
+constructor() {
 }
 
   ngOnInit(): void {}
-  
-  scrollDown(){
-    console.log("Hello")
+
+  typingAnimateToggle(){
+    this.clickAnimate = false;
+    setTimeout(() => {
+      this.clickAnimate = true;}, 500);
+  }
+
+  scrollDown(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }
