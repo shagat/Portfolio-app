@@ -1,24 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutService } from '../about.service';
 
 @Component({
-  selector: 'app-hero',
-  templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css']
+    selector: 'app-hero',
+    templateUrl: './hero.component.html',
+    styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
-clickAnimate : boolean = true;
-constructor() {
-}
+    clickAnimate: boolean = true;
+    imgSrc: { imgName: string, imgLink: string } = { imgName: '', imgLink: '' };
 
-  ngOnInit(): void {}
+    constructor(private aboutService: AboutService) {
+    }
+    ngOnInit(): void {
+        this.imgSrc = this.aboutService.getImgSrc();
+        console.log(this.imgSrc);
+    }
 
-  typingAnimateToggle(){
-    this.clickAnimate = false;
-    setTimeout(() => {
-      this.clickAnimate = true;}, 500);
-  }
+    typingAnimateToggle() {
+        this.clickAnimate = false;
+        setTimeout(() => {
+            this.clickAnimate = true;
+        }, 500);
+    }
 
-  scrollDown(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'});
-  }
+    scrollDown(el: HTMLElement) {
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
 }

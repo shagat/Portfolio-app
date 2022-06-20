@@ -1,7 +1,5 @@
 .second-section-container{
     display: relative;
-    width: 960px;
-    height: 740px;
     margin: 40px;
     padding: 10px;
     border: 2px solid var(--mid-light-color);
@@ -9,6 +7,8 @@
   }
 .second-hero{
     display: flex;
+    width: 90%;
+    height: 100%;
     flex-direction: column;
     margin-top: 6em;
     padding: 2em;
@@ -36,7 +36,6 @@
     border-bottom: 1px solid;
     border-radius: 1px;
     text-align: center;
-    /* text-decoration-line: underline; */
 }
 
 .second-section-container .about-me-paragraph{
