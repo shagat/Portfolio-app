@@ -1,37 +1,36 @@
-You can add global styles to this file, and also import other style files
-
-*,
+You can add global styles to this file,
+and also import other style files *,
 *:before,
-*:after{
+*:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
-    --primary-color:#E0DDAA;
-    --secondary-color:#203239;
-    --dark-color:#141E27;
-    --light-color:#EEEDDE;
-    --mid-beige-color:#CC9544;
-    --mid-light-color: #FFE4C4;
-    --success-color: #5cb85c;
-    --error-color: #d9534f;
+:root {
+  --primary-color: #E0DDAA;
+  --secondary-color: #203239;
+  --dark-color: #141E27;
+  --light-color: #EEEDDE;
+  --mid-beige-color: #CC9544;
+  --mid-light-color: #FFE4C4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
 }
 
-html{
+html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 
-body{
+body {
   background-color: var(--dark-color);
   font-family: 'Courier New', Courier, monospace;
   /* min-width: 1024px; */
   /* max-width: 1440px; */
 }
 
-section{
+section {
   display: flex;
   width: 100%;
   align-content: center;
@@ -41,12 +40,13 @@ section{
   scroll-snap-stop: always;
   overflow: hidden;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
 /* Buttons */
-.btn{
+.btn {
   display: inline-block;
   padding: 10px 30px;
   cursor: pointer;
@@ -56,12 +56,14 @@ a{
   border-radius: 99px;
 }
 
-.btn-outline{
+.btn-outline {
   background-color: transparent;
   border: 1px solid var(--mid-beige-color);
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #E0DDAA;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

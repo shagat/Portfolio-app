@@ -1,5 +1,5 @@
-.nav-container{
-    position:fixed;
+.nav-container {
+    position: fixed;
     left: 50%;
     transform: translate(-50%);
     top: .1em;
@@ -8,25 +8,29 @@
     align-content: center;
     justify-content: center;
     z-index: 2;
-}
-
-.tabs{
+  }
+  
+  .tabs {
     display: flex;
     position: relative;
     background-color: var(--mid-beige-color);
     box-shadow: 0 0 3px 1 rgba(var(--primary-color), 0.15), 0 6px 12px 0 rgba(var(--primary-color), 0.15);
     padding: 0.75rem;
     border-radius: 2em;
-}
-.tabs .tab {
+  }
+  
+  .tabs .tab {
     z-index: 2;
-}
-
-input[type="radio"]{
+  }
+  
+  input[type="radio"] {
     display: none;
-}
-
-.tab{
+  }
+  .tabs.tab{
+    display: none;
+  }
+  
+  .tab {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,25 +38,29 @@ input[type="radio"]{
     width: 100px;
     cursor: pointer;
     transition: color 0.15s ease-in;
-}
-
-input[type="radio"]:checked + label{
+  }
+  
+  input[type="radio"]:checked+label {
     color: var(--light-color);
-}
-input[type="radio"]:hover + label{
+  }
+  
+  input[type="radio"]:hover+label {
     font-weight: 600;
-}
-input[id="radio-1"]:checked ~ .glider {
+  }
+  
+  .home-active~.glider {
     transform: translateX(0);
-}
-input[id="radio-2"]:checked ~ .glider {
+  }
+  
+  .works-active~.glider {
     transform: translateX(100%);
-} 
-input[id="radio-3"]:checked ~ .glider {
+  }
+  
+  .contact-active~.glider {
     transform: translateX(200%);
-}
-
-.glider{
+  }
+  
+  .glider {
     position: absolute;
     height: 25px;
     width: 100px;
@@ -60,4 +68,5 @@ input[id="radio-3"]:checked ~ .glider {
     z-index: 1;
     border-radius: 99px;
     transition: 0.25s ease-out;
-}
+  }
+  
