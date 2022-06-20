@@ -1,10 +1,10 @@
-.second-section-container{
+/* .second-section-container{
     display: relative;
     margin: 40px;
     padding: 10px;
     border: 2px solid var(--mid-light-color);
     margin-top: 3em;
-  }
+  } */
 .second-hero{
     display: flex;
     width: 90%;
@@ -13,22 +13,21 @@
     margin-top: 6em;
     padding: 2em;
 }
-.second-hero .left-quote{
+.left-quote{
     display: flex;
     color: var(--mid-beige-color);
     align-self: flex-start;
     padding-top: 15px;
     padding: 20px;
 }
-
-.second-hero .right-quote{
+.right-quote{
     display: flex;
     color: var(--mid-beige-color);
     align-self: flex-end;
     padding: 20px;
 }
 
-.second-section-container .about-me-heading{
+.about-me-heading{
     width: 30%;
     align-self: center;
     color:  var(--mid-light-color);
@@ -37,8 +36,7 @@
     border-radius: 1px;
     text-align: center;
 }
-
-.second-section-container .about-me-paragraph{
+.about-me-paragraph{
     padding: 20px;
     color: var(--mid-beige-color);
     text-align: center;

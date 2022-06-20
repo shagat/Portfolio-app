@@ -1,18 +1,17 @@
 <section>
-    <div class="hero-first-container">
+    <div class="main-container">
       <!-- hero image -->
       <div class="img-class">
-        <img [src]="imgSrc.imgLink" alt="Rishab Mathew">
+        <img [src]="imgSrc.imgLink" [alt]="imgSrc.imgName">
       </div>
       <!-- Animation class -->
       <div class="typing-animate-1">
-        <div class="hero-typing hero-animate" (click)="typingAnimateToggle()"
-          [ngClass]="{'hero-typing hero-animate': clickAnimate == true}">
+        <div class="hero-animate" (click)="typingAnimateToggle()"
+          [ngClass]="{'hero-animate': clickAnimate == true}">
         </div>
       </div>
       <!-- scroll Down button -->
       <a href="#" class="scroll-down-btn"></a><i class="fa-solid fa-angles-down" ></i>
     </div>
   </section>
-  <!-- Trasition to second section link-->
   <app-home-about></app-home-about>

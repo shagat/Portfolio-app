@@ -7,7 +7,6 @@ import { MaterialModule } from 'src/materials.module';
 import { AppComponent } from './app.component';
 import {HeroComponent} from './home/hero/hero.component'
 
-import { ThirdSectionComponent } from './components/third-section/third-section.component';
 import { WorksFirstSectionComponent } from './components/works-first-section/works-first-section.component';
 import { ContactFirstSectionComponent } from './components/contact/contact-first-section.component';
 import { HomeAboutComponent } from './home/hero/home-about/home-about.component';
@@ -16,7 +15,6 @@ import { HomeAboutComponent } from './home/hero/home-about/home-about.component'
   declarations: [
     AppComponent,
     HeaderComponent,
-    ThirdSectionComponent,
     WorksFirstSectionComponent,
     ContactFirstSectionComponent,
     HeroComponent,
