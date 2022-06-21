@@ -41,6 +41,7 @@ section {
   overflow: hidden;
 }
 
+
 .main-container {
   display: relative;
   width: 960px;
@@ -49,6 +50,13 @@ section {
   padding: 10px;
   border: 2px solid var(--mid-light-color);
   margin-top: 3em;
+}
+.main-container-mid {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 a {

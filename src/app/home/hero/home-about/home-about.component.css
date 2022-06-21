@@ -12,6 +12,7 @@
     flex-direction: column;
     margin-top: 6em;
     padding: 2em;
+    font-family: monospace;
 }
 .left-quote{
     display: flex;

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs'
-import{MatRadioModule} from '@angular/material/radio'
+import { MatCardModule } from '@angular/material/card'
+import { MatGridListModule } from '@angular/material/grid-list'
+import {MatFormFieldModule} from '@angular/material/form-field'
 @NgModule({
     exports: [
-        MatTabsModule,
-        MatRadioModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatGridListModule,
     ]
 })
-export class MaterialModule {}
+export class MaterialModule { }

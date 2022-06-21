@@ -11,7 +11,8 @@
 
 .typing-animate-1 {
   position: absolute;
-  top: 37em;
+  /* top: 37em; */
+  top: 62%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -31,13 +32,13 @@ i {
 .hero-animate {
   width: 23ch;
   border-right: 0.1em solid var(--mid-light-color);
-  font-size: 1.5em;
-  /* margin: 5px; */
+  font-size: 1.6em;
   padding: 2.5px;
   font-family: monospace;
-  animation: type 2s steps(20),
+  animation: type 2.5s steps(22),
     writer 1s infinite alternate,
-    delete .5s steps(5) 2.5s, type2 1s steps(4) 3s forwards;
+    delete .5s steps(5) 2.5s,
+    type2 1s steps(4) 3s forwards;
   overflow: hidden;
   white-space: nowrap;
   cursor: pointer;
@@ -46,7 +47,7 @@ i {
 .hero-animate::before {
   color: var(--mid-light-color);
   content: "Hi! Welcome to my pase";
-  animation: type2 5s steps(4) 3s forwards;
+  animation: type2 1s steps(4) 3s forwards;
 }
 
 /* Typing animate -2 */
@@ -69,7 +70,7 @@ i {
   }
 
   to {
-    width: 23ch;
+    width: 22ch;
     content: "Hi! Welcome to my page.";
   }
 }
@@ -82,7 +83,7 @@ i {
 
 @keyframes delete {
   from {
-    width: 21ch;
+    width: 23ch;
   }
 
   to {
