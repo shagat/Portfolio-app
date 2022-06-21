@@ -8,7 +8,6 @@
   border: .5px solid var(--mid-light-color);
   z-index: 0;
 }
-
 .typing-animate-1 {
   position: absolute;
   /* top: 37em; */

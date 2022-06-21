@@ -6,16 +6,18 @@ import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 import { HeroComponent } from './home/hero/hero.component'
 
-import { WorksFirstSectionComponent } from './components/works-first-section/works-first-section.component';
 import { HomeAboutComponent } from './home/hero/home-about/home-about.component';
+import { WorksListComponent } from './works/works-list/works-list.component';
+import { WorksDetailsComponent } from './works/works-details/works-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    WorksFirstSectionComponent,
     HeroComponent,
     HomeAboutComponent,
+    WorksListComponent,
+    WorksDetailsComponent,
 
   ],
   imports: [

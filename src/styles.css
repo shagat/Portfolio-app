@@ -50,6 +50,7 @@ section {
   padding: 10px;
   border: 2px solid var(--mid-light-color);
   margin-top: 3em;
+  font-family: monospace;
 }
 .main-container-mid {
   display: flex;
@@ -57,6 +58,20 @@ section {
   align-content: center;
   justify-content: center;
   height: 100vh;
+}
+
+.heading-page{
+  width: 30%;
+  align-self: center;
+  color:  var(--mid-light-color);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 1px;
+  text-align: center;
+}
+
+.paragraph-beige{
+  color: var(--mid-beige-color);
 }
 
 a {
@@ -81,6 +96,10 @@ a {
 
 .btn:hover {
   background-color: #E0DDAA;
+}
+
+.shadow {
+  box-shadow: rgba(45, 124, 45, 0.6) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 html, body { height: 100%; }

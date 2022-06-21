@@ -1,0 +1,40 @@
+.works-first-container{
+    width: 960px;
+    height: 740px;
+    margin: 30px;
+    padding: 10px;
+    border: 2px solid var(--mid-light-color);
+    margin-top: 3em;
+  }
+  .grid{
+    display: flex;
+    /* margin: 0 40px; */
+    /* flex: ; */
+    /* grid-template-columns: repeat(2, 1fr);
+    gap: 20px; */
+    justify-content: space-around;
+  }
+  
+  .project_img{
+    display: flex;
+    flex-direction:column;
+    flex: 1;
+    /* justify-items: center; */
+    align-self: center;
+    align-items: center;
+    /* border: 1px solid green; */
+    width: 20%;
+  }
+  
+  .project_desc{
+    display: flex;
+    flex: 1;
+    align-self: center;
+    width: 30%;
+    /* border: 2px solid green; */
+  }
+  
+  img{
+    width: 250px;
+    height: 380px;
+  }

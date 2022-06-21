@@ -1,0 +1,30 @@
+.grid-card {
+  margin: 3em;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 40px 40px;
+}
+
+.box {
+  height: 150px;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  align-content: stretch;
+  flex-direction: column;
+}
+
+.box-heading {
+  height: 120px;
+}
+
+.heading-sub {
+  font-weight: 400;
+  border-bottom: 1px solid;
+  color: var(--mid-light-color);
+}
+
+
