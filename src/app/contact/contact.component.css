@@ -1,0 +1,36 @@
+.grid {
+  display: flex;
+}
+
+.about_img {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: flex-start;
+  align-items: center;
+  width: 20%;
+  padding-top: 4em;
+}
+
+.project_desc {
+  display: flex;
+  margin-top: 3em;
+  align-self: center;
+  width: 70%;
+}
+
+.about-list {
+  font-family: monospace;
+  text-align: center;
+}
+
+.about-list-item{
+  text-decoration: none;
+  list-style: none;
+}
+
+img {
+  width: 200px;
+  height: 330px;
+  border-radius: 200px;
+}
