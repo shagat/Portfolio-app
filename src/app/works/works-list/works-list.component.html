@@ -1,13 +1,14 @@
 <section>
-  <div class="main-container">
+  <div class="main-container" >
     <div class="box box-heading heading-works">
       <h2 class="heading-page">Some of my works</h2>
     </div>
-    <div class="grid-card">
-      <div class="box shadow">
-        <h4 class="heading-sub">Heading</h4>
-        <p class="paragraph-beige">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nisi ipsam veritatis molestiae aliquid
-          voluptatem quis a nam. At, in.</p>
+    <div class="grid-card" >
+      <div class="box shadow" *ngFor="let work of works">
+        <h4 class="heading-sub">{{work.heading}}</h4>
+        <p class="paragraph-beige">{{work.description | shorten:200}}
+          <span class="text-btn">Read more</span>
+        </p>
       </div>
     </div>
   </div>

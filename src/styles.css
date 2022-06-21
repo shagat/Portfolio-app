@@ -97,6 +97,18 @@ a {
 .btn:hover {
   background-color: #E0DDAA;
 }
+.text-btn {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--dark-color);
+  border: none;
+}
+
+.text-btn:hover{
+  color: var(--primary-color);
+  border-right: 1px solid #5cb85c;
+  animation: writer .8s infinite alternate;
+}
 
 .shadow {
   box-shadow: rgba(45, 124, 45, 0.6) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -104,3 +116,9 @@ a {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@keyframes writer {
+  50% {
+    border-color: transparent;
+  }
+}
