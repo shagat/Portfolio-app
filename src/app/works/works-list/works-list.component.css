@@ -17,6 +17,13 @@
   flex-direction: column;
 }
 
+.login-btn{
+  position: relative;
+  left: 42.5%;
+  border-right: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
 .box-heading {
   height: 120px;
 }

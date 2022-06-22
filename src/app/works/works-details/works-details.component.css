@@ -9,18 +9,19 @@
 
 .grid {
   display: grid;
-  margin-top: 3em;
-  grid-template-rows: .5fr 1.5fr 1fr;
-  grid-template-columns: repeat(3, 1fr);
+  padding-top: 2em;
+  grid-template-rows: .3fr .1fr 2fr;
+  grid-template-columns: .5fr 1.5fr 1fr;
   gap: 20px 20px;
   grid-template-areas: 
   "head head head"
-  "img desc desc"
+  "btn btn btn"
   "img desc desc";
 }
 
 .work_heading {
-  align-self: center;
+  /* align-self: center;
+  text-align: center; */
   grid-area: head;
 }
 
@@ -41,11 +42,12 @@ img {
 }
 
 .go-back-btn{
-  position: absolute;
-  right: 5em;
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
+  grid-area: btn;
+  grid-column: -1;
 }
+
 
 .go-back-btn:hover{
   color: var(--primary-color);
