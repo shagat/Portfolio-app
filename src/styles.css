@@ -69,6 +69,11 @@ section {
   border-radius: 1px;
   text-align: center;
 }
+.heading-page-underline{
+  color:  var(--mid-light-color);
+  text-align: center;
+  text-decoration: underline;
+}
 
 .paragraph-beige{
   color: var(--mid-beige-color);

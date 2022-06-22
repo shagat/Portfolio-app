@@ -32,4 +32,8 @@ export class WorksService {
     getWorks(){
         return this.works.slice();
     }
+
+    getWork(index: number){
+        return this.works[index];
+    }
 }
