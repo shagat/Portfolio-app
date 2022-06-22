@@ -1,0 +1,35 @@
+<section>
+  <div class="main-container">
+    <div class="grid">
+      <div class="form-heading">
+        <h1>Edit</h1>
+      </div>
+      <form #workForm="ngForm" class="form-edit">
+        <div class="form-group">
+          <label for="fheading">Project name:</label>
+          <input type="text" id="fheading" class="form-control" ngModel name="fheading" required>
+        </div>
+        <div class="form-group">
+          <label for="fdetails">Short description:</label>
+          <input type="text" id="fdetails" class="form-control" ngModel name="fdetails" required>
+        </div>
+        <div class="form-group">
+          <label for="fworkUrl">Project link (if any):</label>
+          <input type="text" id="fworkUrl" class="form-control" ngModel name="fworkUrl">
+        </div>
+        <div class="form-group">
+          <label for="fdescription">Detailed description:</label>
+          <textarea name="fdescription" id="fdescription" cols="30" rows="10" ngModel></textarea>
+        </div>
+        <div class="form-group">
+          <label for="fimageUrl">Project image:</label>
+          <input type="text" id="fimageUrl" class="form-control" ngModel name="fimageUrl" required>
+        </div>
+      </form>
+      <div class="form-btn">
+        <button class="btn"> Save</button>
+        <button class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</section>

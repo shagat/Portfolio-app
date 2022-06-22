@@ -1,0 +1,24 @@
+.grid {
+    display: grid;
+    padding: 1.5em;
+    grid-template-rows: 0.3fr 1fr 1fr 03fr;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    gap: 20px 20px;
+    grid-template-areas: 
+    "head head head"
+    "form form form"
+    "form form form"
+    "btn btn btn";
+}
+
+.form-heading{
+grid-area: head;
+text-align: center;
+}
+.form-edit{
+grid-area: form;
+text-align: justify;
+}
+.form-btn{
+    grid-area: btn;
+}

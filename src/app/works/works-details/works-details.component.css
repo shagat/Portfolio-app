@@ -9,9 +9,9 @@
 
 .grid {
   display: grid;
-  padding-top: 2em;
-  grid-template-rows: .3fr .1fr 2fr;
-  grid-template-columns: .5fr 1.5fr 1fr;
+  padding: 1.5em;
+  grid-template-rows: 0.3fr 0.1fr 2fr;
+  grid-template-columns: 0.6fr 1.5fr 1fr;
   gap: 20px 20px;
   grid-template-areas: 
   "head head head"
@@ -20,13 +20,14 @@
 }
 
 .work_heading {
-  /* align-self: center;
-  text-align: center; */
+  align-self: center;
+  text-align: center;
   grid-area: head;
 }
 
 .work_img {
   grid-area: img;
+  /* padding-left: 1em; */
   text-align: center;
 }
 
@@ -45,7 +46,9 @@ img {
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
   grid-area: btn;
-  grid-column: -1;
+  text-align: end;
+  grid-column: 3;
+  align-self: center;
 }
 
 

@@ -1,9 +1,12 @@
 <section>
-  <div class="works-first-container grid">
+  <div class="main-container grid">
     <div class="work_heading">
       <h2 class="heading-page-underline">{{work.heading}} </h2>
     </div>
-    <span class="go-back-btn" (click)="onGoBack()">Go back</span>
+    <div class="go-back-btn">
+      <span  (click)="onGoBack()">Go back</span>
+
+    </div>
     <div class="work_img">
       <img [src]="work.imageUrl" alt="work.work_heading">
       <br>
