@@ -10,6 +10,7 @@ import { HomeAboutComponent } from './home/hero/home-about/home-about.component'
 import { WorksListComponent } from './works/works-list/works-list.component';
 import { WorksDetailsComponent } from './works/works-details/works-details.component';
 import { ShortenPipe } from './shared/shorten.pipe';
+import { WorksComponent } from './works/works.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ShortenPipe } from './shared/shorten.pipe';
     HeaderComponent,
     HeroComponent,
     HomeAboutComponent,
+    WorksComponent,
     WorksListComponent,
     WorksDetailsComponent,
     ShortenPipe,

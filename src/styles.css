@@ -81,6 +81,13 @@ section {
 
 a {
   text-decoration: none;
+  color:var(--dark-color);
+  border-right: 2px solid var(--primary-color);
+}
+a:hover{
+  color: var(--primary-color);
+  border-right: 1px solid #5cb85c;
+  animation: writer 0.6s alternate infinite;
 }
 
 /* Buttons */
@@ -102,6 +109,7 @@ a {
 .btn:hover {
   background-color: #E0DDAA;
 }
+
 .text-btn {
   display: inline-block;
   cursor: pointer;

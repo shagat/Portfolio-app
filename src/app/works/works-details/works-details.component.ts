@@ -11,13 +11,18 @@ import { WorksService } from '../works-service';
 export class WorksDetailsComponent implements OnInit {
   work!: Work;
   id!: number;
-  constructor(private worksService: WorksService, private route: ActivatedRoute) { }
+  constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.work = this.worksService.getWork(this.id);
+      console.log(this.work)
     })
+  }
+
+  onGoBack(){
+    this.router.navigate(['../'],{relativeTo: this.route});
   }
 
 }

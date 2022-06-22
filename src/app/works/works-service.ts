@@ -26,6 +26,20 @@ export class WorksService {
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, dignissimos inventore, vero sint sed suscipit quaerat architecto nemo aspernatur cum quas nam recusandae, sit quod facere? Odit, temporibus omnis.',
             'some links to project 3',
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nisi ipsam veritatis molestiae aliqui lkjkdsajhhi aisjdi0fe'
+        ),
+        new Work(
+            'Heading-4',
+            '../assets/rishabh-mathew-Foi2sqECfOA-unsplash.jpg',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, dignissimos inventore, vero sint sed suscipit quaerat architecto nemo aspernatur cum quas nam recusandae, sit quod facere? Odit, temporibus omnis.',
+            'some links to project 4',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nisi ipsam veritatis molestiae aliqui lkjkdsajhhi aisjdi0fe'
+        ),
+        new Work(
+            'Heading-5',
+            '../assets/rishabh-mathew-Foi2sqECfOA-unsplash.jpg',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, dignissimos inventore, vero sint sed suscipit quaerat architecto nemo aspernatur cum quas nam recusandae, sit quod facere? Odit, temporibus omnis.',
+            'some links to project 5',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, nisi ipsam veritatis molestiae aliqui lkjkdsajhhi aisjdi0fe'
         )
     ]
 

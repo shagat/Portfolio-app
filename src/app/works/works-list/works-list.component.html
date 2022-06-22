@@ -7,7 +7,7 @@
       <div class="box shadow" *ngFor="let work of works; let i = index">
         <h4 class="heading-sub">{{work.heading}}</h4>
         <p class="paragraph-beige">{{work.details | shorten:200}}
-          <a [routerLink]="" ></a><span class="text-btn">Read more</span>
+          <a [routerLink]="[i]" ><span class="text-btn">Read more</span></a>
         </p>
       </div>
     </div>

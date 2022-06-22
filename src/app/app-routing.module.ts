@@ -5,14 +5,15 @@ import { HeroComponent } from './home/hero/hero.component';
 import { ContactComponent } from './contact/contact.component';
 import { WorksListComponent } from './works/works-list/works-list.component';
 import { WorksDetailsComponent } from './works/works-details/works-details.component';
+import { WorksComponent } from './works/works.component';
 
 const routes : Routes = [
   {path: '', component : HeroComponent, pathMatch:'full'},
-  {path: 'works', component:WorksListComponent, children: [
-    {path: ':id', component: WorksDetailsComponent}
+  {path: 'works', component:WorksComponent, children: [
+    {path: '', component: WorksListComponent},
+    {path: ':id', component: WorksDetailsComponent},
   ]},
   {path: 'contact', component:ContactComponent},
-  // {path: 'work_details/:id', component:WorksDetailsComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

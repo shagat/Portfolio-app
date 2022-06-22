@@ -1,15 +1,16 @@
 <section>
   <div class="works-first-container grid">
     <div class="work_heading">
-      <h2 class="heading-page-underline">{{work.heading}}</h2>
+      <h2 class="heading-page-underline">{{work.heading}} </h2>
+      <span class="go-back-btn" (click)="onGoBack()">Go back</span>
     </div>
     <div class="work_img">
-      <img [src]="work.imageUrl" alt="">
-      <a [href]="work.workUrl"></a>
+      <img [src]="work.imageUrl" alt="work.work_heading">
+      <br>
+      <a [href]="work.workUrl"> Link: {{work.workUrl}}</a>
     </div>
     <div class="work_desc">
-      <p>{{work.description}}
-      </p>
+      <p class="paragraph-beige">{{work.description}}</p>
     </div>
   </div>
 </section>
