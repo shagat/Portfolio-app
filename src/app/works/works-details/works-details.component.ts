@@ -17,7 +17,6 @@ export class WorksDetailsComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.work = this.worksService.getWork(this.id);
-      console.log(this.work)
     })
   }
 

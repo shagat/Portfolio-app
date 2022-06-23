@@ -58,8 +58,8 @@ export class WorksService {
         this.workChanged.next(this.works.slice());
     }
 
-    updateWork(index: number, newwork: Work) {
-        this.works[index] = newwork;
+    updateWork(index: number, newWork: Work) {
+        this.works[index] = newWork;
         this.workChanged.next(this.works.slice());
     }
 

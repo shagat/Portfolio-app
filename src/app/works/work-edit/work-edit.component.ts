@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Subscription } from "rxjs";
 import { Work } from "../Work.model";
 import { WorksService } from "../works-service";
 
@@ -9,24 +10,59 @@ import { WorksService } from "../works-service";
     templateUrl: 'work-edit.component.html',
     styleUrls: ['work-edit.component.css']
 })
-export class WorkEditComponent implements OnInit {
-    id: number = 0;
-    work!: Work;
+export class WorkEditComponent implements OnInit, OnDestroy {
+    @ViewChild('workForm', { static: false }) wForm: NgForm;
+    id: number = -1;
+    work: Work;
+    subscription = new Subscription;
+    editMode = false;
+
     constructor(private router: Router, private route: ActivatedRoute, private worksService: WorksService) { }
-    onSave(form: NgForm) {
-        console.log(form)
+
+    onSubmit() {
+        if (this.editMode){
+            this.worksService.updateWork(this.id, this.wForm.value);
+            this.onCancel()
+        } else {
+            this.worksService.addWork(this.wForm.value);
+            this.onCancel()
+        }
     }
+
     onCancel() {
         this.router.navigate(['works'])
     }
+
     onDelete() {
         console.log('delete');
+        this.worksService.deleteWork(this.id);
+        this.onCancel();
     }
+
     ngOnInit(): void {
-        this.route.params.subscribe((params: Params) => {
+        this.subscription = this.route.params.subscribe((params: Params) => {
             this.id = +params['id'];
-            this.work = this.worksService.getWork(this.id);
-            console.log(this.work)
+            this.work = this.worksService.getWork(this.id)
         })
+        if (this.work){
+            this.editMode = true;
+            setTimeout(() => {
+                this.wForm.setValue({
+                    fheading: this.work.heading,
+                    fdetails: this.work.details,
+                    fworkUrl: this.work.workUrl,
+                    fdescription: this.work.description,
+                    fimageUrl: this.work.imageUrl
+                })}, 0);
+            } else{
+                this.editMode = false;
+        }
+    }
+
+    // ngAfterViewInit(): void {
+    //     this.subscription.unsubscribe();
+    // }
+
+    ngOnDestroy(): void {
     }
 }
