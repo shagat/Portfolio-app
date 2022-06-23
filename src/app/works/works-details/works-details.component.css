@@ -57,3 +57,20 @@ img {
   border-right: 1px solid #5cb85c;
   animation: writer .8s infinite alternate;
 }
+
+.edit-btn{
+  border-right: 2px solid var(--primary-color);
+  cursor: pointer;
+  grid-area: btn;
+  text-align: start;
+  grid-column: 3;
+  align-self: center;
+  width: 17%;
+}
+
+
+.edit-btn:hover{
+  color: var(--primary-color);
+  border-right: 1px solid #5cb85c;
+  animation: writer .8s infinite alternate;
+}

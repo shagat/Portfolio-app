@@ -1,10 +1,12 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 import { Work } from "./Work.model";
 
 @Injectable({
     providedIn:('root')
 })
 export class WorksService {
+    workChanged = new Subject<Work[]>();
     private works:Work[] = [
         new Work(
             'Heading-1',
@@ -49,5 +51,20 @@ export class WorksService {
 
     getWork(index: number){
         return this.works[index];
+    }
+
+    addWork(work: Work) {
+        this.works.push(work);
+        this.workChanged.next(this.works.slice());
+    }
+
+    updateWork(index: number, newwork: Work) {
+        this.works[index] = newwork;
+        this.workChanged.next(this.works.slice());
+    }
+
+    deleteWork(index: number) {
+        this.works.splice(index, 1);
+        this.workChanged.next(this.works.slice());
     }
 }

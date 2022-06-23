@@ -119,11 +119,11 @@ section {
 
 
 .btn {
-  padding: 10px 30px;
+  padding: 8px 30px;
   border: none;
   border-radius: 4px;
   display: inline-block;
-  margin: 2px;
+  margin: 1px;
   font-weight: normal;
   background: var(--mid-beige-color);
   color: var(--dark-color);

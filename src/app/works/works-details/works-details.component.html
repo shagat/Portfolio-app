@@ -5,7 +5,6 @@
     </div>
     <div class="go-back-btn">
       <span  (click)="onGoBack()">Go back</span>
-
     </div>
     <div class="work_img">
       <img [src]="work.imageUrl" alt="work.work_heading">
@@ -14,6 +13,9 @@
     </div>
     <div class="work_desc">
       <p class="paragraph-beige">{{work.description}}</p>
+    </div>
+    <div class="edit-btn">
+      <span  (click)="onEdit()">Edit</span>
     </div>
   </div>
 </section>

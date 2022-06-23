@@ -24,5 +24,8 @@ export class WorksDetailsComponent implements OnInit {
   onGoBack(){
     this.router.navigate(['../'],{relativeTo: this.route});
   }
+  onEdit(){
+    console.log('edit')
+  }
 
 }
