@@ -9,7 +9,6 @@ import { WorksService } from '../works-service';
 })
 export class WorksListComponent implements OnInit {
 works: Work[]=[];
-index!: number;
   constructor(private worksService: WorksService) { }
 
   ngOnInit(): void {

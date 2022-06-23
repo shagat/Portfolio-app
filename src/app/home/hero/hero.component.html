@@ -1,17 +1,16 @@
 <section>
-    <div class="main-container">
-      <!-- hero image -->
-      <div class="img-class">
-        <img [src]="imgSrc.imgLink" [alt]="imgSrc.imgName">
-      </div>
-      <!-- Animation class -->
-      <div class="typing-animate-1">
-        <div class="hero-animate" (click)="typingAnimateToggle()"
-          [ngClass]="{'hero-animate': clickAnimate == true}">
-        </div>
-      </div>
-      <!-- scroll Down button -->
-      <i class="fa-solid fa-angles-down" ></i>
+  <div class="main-container">
+    <!-- hero image -->
+    <div class="img-class">
+      <img [src]="imgSrc.imgLink" [alt]="imgSrc.imgName">
     </div>
-  </section>
-  <app-home-about></app-home-about>
+    <!-- Animation class -->
+    <div class="typing-animate-1">
+      <div class="hero-animate" (click)="typingAnimateToggle()" [ngClass]="{'hero-animate': clickAnimate == true}">
+      </div>
+    </div>
+    <!-- scroll Down button -->
+    <i class="fa-solid fa-angles-down"></i>
+  </div>
+</section>
+<app-home-about></app-home-about>

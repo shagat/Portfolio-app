@@ -21,11 +21,11 @@ export class WorksDetailsComponent implements OnInit {
     })
   }
 
-  onGoBack(){
-    this.router.navigate(['../'],{relativeTo: this.route});
+  onGoBack() {
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
-  onEdit(){
-    console.log('edit')
+  onEdit() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
 }

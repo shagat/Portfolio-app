@@ -3,11 +3,11 @@ import { Subject } from "rxjs";
 import { Work } from "./Work.model";
 
 @Injectable({
-    providedIn:('root')
+    providedIn: ('root')
 })
 export class WorksService {
     workChanged = new Subject<Work[]>();
-    private works:Work[] = [
+    private works: Work[] = [
         new Work(
             'Heading-1',
             '../assets/rishabh-mathew-Foi2sqECfOA-unsplash.jpg',
@@ -45,11 +45,11 @@ export class WorksService {
         )
     ]
 
-    getWorks(){
+    getWorks() {
         return this.works.slice();
     }
 
-    getWork(index: number){
+    getWork(index: number) {
         return this.works[index];
     }
 

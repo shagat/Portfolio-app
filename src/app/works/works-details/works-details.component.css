@@ -13,10 +13,10 @@
   grid-template-rows: 0.3fr 0.1fr 2fr;
   grid-template-columns: 0.6fr 1.5fr 1fr;
   gap: 20px 20px;
-  grid-template-areas: 
-  "head head head"
-  "btn btn btn"
-  "img desc desc";
+  grid-template-areas:
+    "head head head"
+    "btn btn btn"
+    "img desc desc";
 }
 
 .work_heading {
@@ -32,7 +32,7 @@
 }
 
 .work_desc {
-  text-align:justify;
+  text-align: justify;
   padding: 1em;
   grid-area: desc;
 }
@@ -42,7 +42,7 @@ img {
   height: 230px;
 }
 
-.go-back-btn{
+.go-back-btn {
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
   grid-area: btn;
@@ -52,13 +52,13 @@ img {
 }
 
 
-.go-back-btn:hover{
+.go-back-btn:hover {
   color: var(--primary-color);
   border-right: 1px solid #5cb85c;
   animation: writer .8s infinite alternate;
 }
 
-.edit-btn{
+.edit-btn {
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
   grid-area: btn;
@@ -69,7 +69,7 @@ img {
 }
 
 
-.edit-btn:hover{
+.edit-btn:hover {
   color: var(--primary-color);
   border-right: 1px solid #5cb85c;
   animation: writer .8s infinite alternate;

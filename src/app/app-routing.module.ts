@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'works', component: WorksComponent, children: [
       { path: '', component: WorksListComponent },
       { path: ':id', component: WorksDetailsComponent },
-      { path: 'edit/:id:', component: WorkEditComponent },
+      { path: ':id/edit', component: WorkEditComponent },
     ]
   },
   { path: 'contact', component: ContactComponent },
