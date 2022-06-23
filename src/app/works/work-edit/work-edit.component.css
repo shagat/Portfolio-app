@@ -1,24 +1,46 @@
 .grid {
-    display: grid;
-    padding: 1.5em;
-    grid-template-rows: 0.3fr 1fr 1fr 03fr;
-    grid-template-columns: 1fr 1.5fr 1.5fr;
-    gap: 20px 20px;
-    grid-template-areas: 
-    "head head head"
-    "form form form"
-    "form form form"
-    "btn btn btn";
+  display: grid;
+  padding: 1em;
+  padding-right: 2em;
+  grid-template-rows: 0.2fr 1fr .1fr .5fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 20px;
+  grid-template-areas:
+    "head head head head"
+    "form form form form"
+    "formImg formImg btn btn"
+    ;
 }
 
-.form-heading{
-grid-area: head;
-text-align: center;
+.form-heading {
+  grid-area: head;
+  margin-top: 1em;
+  height: 40px;
+  width: 100%;
+  grid-column: 2 /span 2;
 }
-.form-edit{
-grid-area: form;
-text-align: justify;
+
+.form-edit {
+  grid-area: form;
 }
-.form-btn{
-    grid-area: btn;
+
+.form-btn {
+  grid-area: btn;
+  text-align: center;
 }
+
+.form-img {
+  grid-area: formImg;
+  text-align: center;
+  border: .5px solid var(--primary-color);
+  width: auto;
+  height: 135px;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+

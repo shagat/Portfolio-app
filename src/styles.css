@@ -18,6 +18,16 @@ and also import other style files *,
   --error-color: #d9534f;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 html {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -26,8 +36,6 @@ html {
 body {
   background-color: var(--dark-color);
   font-family: 'Courier New', Courier, monospace;
-  /* min-width: 1024px; */
-  /* max-width: 1440px; */
 }
 
 section {
@@ -52,6 +60,7 @@ section {
   margin-top: 3em;
   font-family: monospace;
 }
+
 .main-container-mid {
   display: flex;
   width: 100%;
@@ -60,46 +69,31 @@ section {
   height: 100vh;
 }
 
-.heading-page{
+.heading-page {
   width: 30%;
   align-self: center;
-  color:  var(--mid-light-color);
+  color: var(--mid-light-color);
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-radius: 1px;
   text-align: center;
 }
-.heading-page-underline{
-  color:  var(--mid-light-color);
+
+.heading-page-underline {
+  color: var(--mid-light-color);
   text-align: center;
   text-decoration: underline;
 }
 
-.paragraph-beige{
+.paragraph-beige {
   color: var(--mid-beige-color);
 }
 
-a {
-  text-decoration: none;
-  color:var(--dark-color);
-  border-right: 2px solid var(--primary-color);
-}
-a:hover{
-  color: var(--primary-color);
-  border-right: 1px solid #5cb85c;
-  animation: writer 0.6s alternate infinite;
+.shadow {
+  box-shadow: rgba(45, 124, 45, 0.6) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 /* Buttons */
-.btn {
-  display: inline-block;
-  padding: 10px 30px;
-  cursor: pointer;
-  background: var(--mid-beige-color);
-  color: var(--dark-color);
-  border: none;
-  border-radius: 99px;
-}
 
 .btn-outline {
   background-color: transparent;
@@ -117,19 +111,167 @@ a:hover{
   border: none;
 }
 
-.text-btn:hover{
+.text-btn:hover {
   color: var(--primary-color);
   border-right: 1px solid #5cb85c;
   animation: writer .8s infinite alternate;
 }
 
-.shadow {
-  box-shadow: rgba(45, 124, 45, 0.6) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+.btn {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 2px;
+  font-weight: normal;
+  background: var(--mid-beige-color);
+  color: var(--dark-color);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.42857143;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
 
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+
+.btn:active,
+.btn.active {
+  /* background-image: none; */
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  opacity: 0.65;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  border-right: 2px solid var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+  border-right: 1px solid #5cb85c;
+  animation: writer 0.6s alternate infinite;
+}
+
+/* Form controls  */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #999;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #999;
+}
+
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+.form-control[disabled],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+/* Image */
+img{
+  vertical-align: middle;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animation */
 @keyframes writer {
   50% {
     border-color: transparent;

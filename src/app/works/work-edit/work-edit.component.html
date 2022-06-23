@@ -1,7 +1,7 @@
 <section>
   <div class="main-container">
     <div class="grid">
-      <div class="form-heading">
+      <div class="form-heading heading-page">
         <h1>Edit</h1>
       </div>
       <form #workForm="ngForm" class="form-edit">
@@ -19,17 +19,18 @@
         </div>
         <div class="form-group">
           <label for="fdescription">Detailed description:</label>
-          <textarea name="fdescription" id="fdescription" cols="30" rows="10" ngModel></textarea>
+          <textarea class="form-control" name="fdescription" id="fdescription" rows="7" ngModel></textarea>
         </div>
         <div class="form-group">
           <label for="fimageUrl">Project image:</label>
-          <input type="text" id="fimageUrl" class="form-control" ngModel name="fimageUrl" required>
+          <input type="text" id="fimageUrl" class="form-control" ngModel name="fimageUrl" required #fimage>
         </div>
       </form>
       <div class="form-btn">
         <button class="btn"> Save</button>
         <button class="btn">Cancel</button>
       </div>
+      <img class="img-responsive form-img" [src]="fimage.value" alt="Image Preview">
     </div>
   </div>
 </section>
