@@ -1,8 +1,8 @@
 <section>
   <div class="main-container">
     <div class="grid">
-      <div class="form-heading heading-page">
-        <h1>Edit</h1>
+      <div class="box-heading-no-border form-heading">
+        <h1>{{editMode ? 'Edit' : 'New'}}</h1>
       </div>
       <form #workForm="ngForm" class="form-edit" (ngSubmit)="onSubmit()">
         <div class="form-btn">
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
           <label for="fdescription">Detailed description:</label>
-          <textarea class="form-control" name="fdescription" id="fdescription" rows="7" ngModel required ></textarea>
+          <textarea class="form-control" name="fdescription" id="fdescription" rows="7" ngModel required></textarea>
         </div>
         <div class="form-group">
           <label for="fimageUrl">Project image:</label>

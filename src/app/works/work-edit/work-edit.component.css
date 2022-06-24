@@ -2,7 +2,7 @@
   display: grid;
   padding: .6em;
   padding-right: 2em;
-  grid-template-rows: 0.2fr 1fr .1fr .5fr;
+  grid-template-rows: 0.1fr 1fr .1fr .5fr;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px 20px;
   grid-template-areas:
@@ -15,11 +15,7 @@
 
 .form-heading {
   grid-area: head;
-  margin-top: .5em;
-  height: 30px;
-  width: 100%;
-  padding-left: 10px;
-  grid-column: 2 /span 2;
+  margin-top: 2em;
 }
 
 .form-edit {
@@ -27,7 +23,6 @@
 }
 
 .form-btn {
-  /* grid-area: btn; */
   text-align: end;
 }
 
@@ -36,7 +31,7 @@
   align-content: center;
   border: .5px solid var(--primary-color);
   width: auto;
-  height: 115px;
+  height: 130px;
 }
 
 label {

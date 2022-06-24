@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: 'works', component: WorksComponent, children: [
       { path: '', component: WorksListComponent },
+      { path: 'new', component: WorkEditComponent },
       { path: ':id', component: WorksDetailsComponent },
       { path: ':id/edit', component: WorkEditComponent },
     ]

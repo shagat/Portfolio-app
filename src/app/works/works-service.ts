@@ -7,6 +7,7 @@ import { Work } from "./Work.model";
 })
 export class WorksService {
     workChanged = new Subject<Work[]>();
+    startedEditing = new Subject<number>();
     private works: Work[] = [
         new Work(
             'Heading-1',
@@ -46,7 +47,7 @@ export class WorksService {
     ]
 
     getWorks() {
-        console.log(this.works)
+        // console.log(this.works)
         return this.works.slice();
     }
 
@@ -61,6 +62,7 @@ export class WorksService {
 
     updateWork(index: number, newWork: Work) {
         this.works[index] = newWork;
+        console.log('This is from service- '+newWork.heading)
         this.workChanged.next(this.works.slice());
     }
 

@@ -23,7 +23,9 @@ export class WorksDetailsComponent implements OnInit {
   onGoBack() {
     this.router.navigate(['../'], { relativeTo: this.route });
   }
+
   onEdit() {
+    this.worksService.startedEditing.next(this.id);
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
 

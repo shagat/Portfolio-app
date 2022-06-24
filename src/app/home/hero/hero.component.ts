@@ -14,7 +14,6 @@ export class HeroComponent implements OnInit {
     }
     ngOnInit(): void {
         this.imgSrc = this.aboutService.getImgSrc();
-        console.log(this.imgSrc);
     }
 
     typingAnimateToggle() {

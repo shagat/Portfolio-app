@@ -13,7 +13,15 @@
 }
 
 .box-heading {
+  display: grid;
+  grid-template-columns:.5fr .5fr 1fr .5fr .5fr;
   height: 120px;
+}
+
+.box-heading > h2{
+  width: 100%;
+  align-items: center;
+  grid-column: 3;
 }
 
 .heading-sub {
