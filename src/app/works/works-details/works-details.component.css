@@ -27,7 +27,6 @@
 
 .work_img {
   grid-area: img;
-  /* padding-left: 1em; */
   text-align: center;
 }
 
@@ -43,34 +42,16 @@ img {
 }
 
 .go-back-btn {
-  border-right: 2px solid var(--primary-color);
-  cursor: pointer;
-  grid-area: btn;
+  position: relative;
   text-align: end;
   grid-column: 3;
-  align-self: center;
+  grid-area: btn;
 }
-
-
-.go-back-btn:hover {
-  color: var(--primary-color);
-  border-right: 1px solid #5cb85c;
-  animation: writer .8s infinite alternate;
-}
-
-.edit-btn {
+.go-back-btn a {
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
-  grid-area: btn;
-  text-align: start;
-  grid-column: 3;
-  align-self: center;
-  width: 17%;
+  margin: 5px;
+
 }
 
 
-.edit-btn:hover {
-  color: var(--primary-color);
-  border-right: 1px solid #5cb85c;
-  animation: writer .8s infinite alternate;
-}

@@ -7,15 +7,16 @@ import { WorksListComponent } from './works/works-list/works-list.component';
 import { WorksDetailsComponent } from './works/works-details/works-details.component';
 import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
+import { WorksResolverService } from './works/works-resolver.service';
 
 const routes: Routes = [
   { path: '', component: HeroComponent, pathMatch: 'full' },
   {
     path: 'works', component: WorksComponent, children: [
-      { path: '', component: WorksListComponent },
+      { path: '', component: WorksListComponent, resolve: [WorksResolverService] },
       { path: 'new', component: WorkEditComponent },
-      { path: ':id', component: WorksDetailsComponent },
-      { path: ':id/edit', component: WorkEditComponent },
+      { path: ':id', component: WorksDetailsComponent, resolve: [WorksResolverService] },
+      { path: ':id/edit', component: WorkEditComponent, resolve: [WorksResolverService] },
     ]
   },
   { path: 'contact', component: ContactComponent },

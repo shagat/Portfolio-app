@@ -13,6 +13,9 @@ import { ShortenPipe } from './shared/shorten.pipe';
 import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
 import { WorkItemComponent } from './works/work-item/work-item.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { LoadingSpinner } from './shared/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,15 @@ import { WorkItemComponent } from './works/work-item/work-item.component';
     WorksDetailsComponent,
     WorkEditComponent,
     ShortenPipe,
+    LoadingSpinner
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

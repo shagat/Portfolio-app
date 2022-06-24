@@ -8,25 +8,25 @@ import { WorksService } from "../works/works-service";
 })
 
 export class DataStorageService {
-    constructor(private http: HttpClient, private worksService: WorksService) {
-    }
+    constructor(private http: HttpClient, private worksService: WorksService) { }
 
-    storeWorks(){
+    storeWorks() {
         const works = this.worksService.getWorks();
         this.http.put('https://my-protfolio-fb050-default-rtdb.asia-southeast1.firebasedatabase.app/works.json',
-         works)
-         .subscribe( res => {
-            console.log(res);
-        })
+            works)
+            .subscribe(res => {
+                console.log(res);
+            })
     }
 
-    fetchRecipes(){
+    fetchRecipes() {
         return this.http.get<Work[]>(
             'https://my-protfolio-fb050-default-rtdb.asia-southeast1.firebasedatabase.app/works.json'
-            ).pipe(
-                tap(works => {
-                    this.worksService.setWorks(works);
-                })
-            )
+        ).pipe(
+            tap(works => {
+                this.worksService.setWorks(works);
+                console.log(works);
+            })
+        )
     }
 }
