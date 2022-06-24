@@ -21,7 +21,10 @@ export class WorkEditComponent implements OnInit, OnDestroy {
 
     onSubmit() {
         if (this.editMode){
+
+            console.log(this.editMode)
             this.worksService.updateWork(this.id, this.wForm.value);
+            // console.log(this.id, this.wForm.value)
             this.onCancel()
         } else {
             this.worksService.addWork(this.wForm.value);

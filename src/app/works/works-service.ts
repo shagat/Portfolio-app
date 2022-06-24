@@ -46,6 +46,7 @@ export class WorksService {
     ]
 
     getWorks() {
+        console.log(this.works)
         return this.works.slice();
     }
 

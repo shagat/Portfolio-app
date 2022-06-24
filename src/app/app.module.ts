@@ -12,6 +12,7 @@ import { WorksDetailsComponent } from './works/works-details/works-details.compo
 import { ShortenPipe } from './shared/shorten.pipe';
 import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
+import { WorkItemComponent } from './works/work-item/work-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { WorkEditComponent } from './works/work-edit/work-edit.component';
     HeroComponent,
     HomeAboutComponent,
     WorksComponent,
+    WorkItemComponent,
     WorksListComponent,
     WorksDetailsComponent,
     WorkEditComponent,

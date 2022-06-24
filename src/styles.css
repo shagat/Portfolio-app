@@ -185,6 +185,7 @@ a {
   text-decoration: none;
   color: var(--dark-color);
   border-right: 2px solid var(--primary-color);
+  cursor: pointer;
 }
 
 a:hover {
