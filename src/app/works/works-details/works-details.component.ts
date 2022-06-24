@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Work } from '../Work.model';
 import { WorksService } from '../works-service';
 
@@ -8,9 +9,10 @@ import { WorksService } from '../works-service';
   templateUrl: './works-details.component.html',
   styleUrls: ['./works-details.component.css']
 })
-export class WorksDetailsComponent implements OnInit {
+export class WorksDetailsComponent implements OnInit, OnDestroy {
   work!: Work;
   id!: number;
+  subscription = new Subscription
   constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -28,5 +30,8 @@ export class WorksDetailsComponent implements OnInit {
     this.worksService.startedEditing.next(this.id);
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
-
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

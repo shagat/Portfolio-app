@@ -89,5 +89,6 @@ export class WorkEditComponent implements OnInit, OnDestroy {
 
 
     ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 }
