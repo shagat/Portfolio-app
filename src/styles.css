@@ -38,6 +38,17 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+secti
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--dark-color);
+  font-family: 'Courier New', Courier, monospace;
+}
+
 section {
   display: flex;
   width: 100%;
@@ -68,15 +79,6 @@ section {
   justify-content: center;
   height: 100vh;
 }
-
-/* .heading-page {
-  align-self: center;
-  color: var(--mid-light-color);
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  border-radius: 1px;
-  text-align: center;
-} */
 
 .box-heading {
   display: grid;
@@ -226,10 +228,10 @@ a:hover {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555555;
-  background-color: #fff;
+  color: var(--mid-beige-color);
+  background-color: var(--dark-color);
   background-image: none;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -242,23 +244,23 @@ a:hover {
 }
 
 .form-control:focus {
-  border-color: #66afe9;
+  border-color: var(--mid-light-color);
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(32, 155, 32, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(158, 192, 36, 0.6);
 }
 
 .form-control::-moz-placeholder {
-  color: #999;
+  color: var(--mid-light-color);
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #999;
+  color: var(--mid-light-color);
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #999;
+  color: var(--mid-light-color);
 }
 
 .form-control::-ms-expand {
@@ -280,6 +282,15 @@ fieldset[disabled] .form-control {
 
 textarea.form-control {
   height: auto;
+}
+
+/* form error */
+.help-block {
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  color: var(--error-color);
+  font-size: small;
 }
 
 /* Image */

@@ -6,31 +6,38 @@
       </div>
       <form #workForm="ngForm" class="form-edit" (ngSubmit)="onSubmit()">
         <div class="form-btn">
+          <span *ngIf="workForm.invalid && workForm.touched" class="help-block"> * something is missing.</span>
           <button type="button" class="btn" (click)="onDelete()" *ngIf="editMode == true">Delete</button>
-          <button type="button" class="btn" (click)="onStore()" *ngIf="editMode == true">Store</button>
           <button type="submit" class="btn" [disabled]="workForm.touched && workForm.invalid"> Save</button>
           <button type="button" class="btn" (click)="onCancel()">Cancel</button>
         </div>
         <div class="form-group">
-            <label for="fheading">Project name:</label>
-            <input type="text" id="fheading" class="form-control" ngModel name="fheading" required>
-          </div>
+          <label for="fheading">Project name:</label>
+          <input type="text" id="fheading" class="form-control" ngModel name="heading" #fheading="ngModel" required
+            maxlength="50">
+          <span *ngIf="fheading.invalid && fheading.touched" class="help-block">required & not more than 50 letters</span>
+        </div>
         <div class="form-group">
           <label for="fdetails">Short description:</label>
-          <input type="text" id="fdetails" class="form-control" ngModel name="fdetails" required maxlength="130">
+          <input type="text" id="fdetails" class="form-control" ngModel name="details" #fdetails="ngModel" required
+            maxlength="130">
+          <span *ngIf="fdetails.invalid && fdetails.touched" class="help-block"> required & not more than 130 letters </span>
         </div>
         <div class="form-group">
           <label for="fworkUrl">Project link (if any):</label>
-          <input type="text" id="fworkUrl" class="form-control" ngModel name="fworkUrl">
+          <input type="text" id="fworkUrl" class="form-control" ngModel name="workUrl">
         </div>
         <div class="form-group">
           <label for="fdescription">Detailed description:</label>
-          <textarea class="form-control" name="fdescription" id="fdescription" rows="7" ngModel required></textarea>
+          <textarea class="form-control" name="description" id="fdescription" rows="7" #fdescription="ngModel" ngModel
+            required></textarea>
+          <span *ngIf="fdescription.invalid && fdescription.touched" class="help-block">required</span>
         </div>
         <div class="form-group">
-          <label for="fimageUrl">Project image:</label>
-          <input type="text" id="fimageUrl" class="form-control" ngModel name="fimageUrl" required #fimage>
+          <label for="fimageUrl">Link to project image:</label>
+          <input type="text" id="fimageUrl" class="form-control" ngModel name="imageUrl" [defaultValue]="defaultImage" #fimage>
         </div>
+
       </form>
       <img class="img-responsive form-img" [src]="fimage.value" alt="Image Preview">
     </div>

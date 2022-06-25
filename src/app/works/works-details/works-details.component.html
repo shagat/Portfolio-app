@@ -8,9 +8,11 @@
       <a (click)="onGoBack()">Go back</a>
     </div>
     <div class="work_img">
-      <img [src]="work.imageUrl" alt="work.work_heading">
+      <img *ngIf="work.imageUrl !== '' " [src]="work.imageUrl" alt="work.work_heading">
       <br>
-      <a [href]="work.workUrl"> Link: {{work.workUrl}}</a>
+      <div *ngIf="work.workUrl">
+        <span>Link:</span><a [href]="work.workUrl"> {{work.workUrl}}</a>
+      </div>
     </div>
     <div class="work_desc">
       <p class="paragraph-beige">{{work.description}}</p>

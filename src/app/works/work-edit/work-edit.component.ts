@@ -16,29 +16,30 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
     @ViewChild('workForm', { static: false }) wForm: NgForm;
     editedItemIndex: number = -1;
     editedItem: Work;
+    defaultImage = 'default';
     subscription = new Subscription;
     editMode = false;
 
     constructor(private router: Router, private route: ActivatedRoute, private worksService: WorksService, private dataStorageService: DataStorageService) { }
 
     onSubmit() {
-        this.editedItem = {
-            heading: this.wForm.value.fheading,
-            imageUrl: this.wForm.value.fimageUrl,
-            details: this.wForm.value.fdetails,
-            description: this.wForm.value.fdescription,
-            workUrl: this.wForm.value.fworkUrl
-        }
         if (this.editMode) {
-            this.worksService.updateWork(this.editedItemIndex, this.editedItem);
-            this.onCancel()
+            if (confirm('Confirm your changes?')) {
+                this.worksService.updateWork(this.editedItemIndex, this.wForm.value);
+                this.dataStorageService.storeWorks();
+                this.onCancel()
+            }
         } else {
-            this.worksService.addWork(this.wForm.value);
-            this.onCancel()
+            if (confirm('Confirm new entry?')) {
+                this.worksService.addWork(this.wForm.value);
+                this.dataStorageService.storeWorks();
+                this.onCancel()
+            }
         }
     }
 
     onCancel() {
+        this.wForm.reset();
         this.editMode = false;
         this.router.navigate(['works'])
     }
@@ -58,11 +59,11 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
             this.editMode = true;
             setTimeout(() => {
                 this.wForm.setValue({
-                    fheading: this.editedItem.heading,
-                    fdetails: this.editedItem.details,
-                    fworkUrl: this.editedItem.workUrl,
-                    fdescription: this.editedItem.description,
-                    fimageUrl: this.editedItem.imageUrl
+                    heading: this.editedItem.heading,
+                    details: this.editedItem.details,
+                    workUrl: this.editedItem.workUrl,
+                    description: this.editedItem.description,
+                    imageUrl: this.editedItem.imageUrl
                 })
             }, 0);
         } else {
@@ -71,12 +72,8 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
         }
     }
 
-    onStore() {
-        this.dataStorageService.storeWorks()
-    }
-
     canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
-        if (this.wForm.dirty && this.wForm.touched) {
+        if (this.wForm.dirty && this.wForm.touched && this.editMode) {
             return confirm('Do you want to discard the changes');
         } else {
             return true;
@@ -85,5 +82,7 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
+        console.log('From the onDestroy method of work-edit')
+        this.dataStorageService.storeAndFetch();
     }
 }

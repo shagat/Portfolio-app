@@ -30,7 +30,7 @@ export class WorksDetailsComponent implements OnInit, OnDestroy {
     this.worksService.startedEditing.next(this.id);
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
-  
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

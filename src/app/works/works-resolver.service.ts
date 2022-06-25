@@ -15,7 +15,7 @@ export class WorksResolverService implements Resolve<Work[]>{
         const works = this.worksService.getWorks()
         if (works.length === 0) {
             console.log('This is the work of a Resolver')
-            return this.dataStorageService.fetchRecipes();
+            return this.dataStorageService.fetchWorks();
         } else {
             console.log('This is the work of a Resolver')
             return works;

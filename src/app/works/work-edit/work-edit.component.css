@@ -40,3 +40,8 @@ label {
   margin-bottom: 5px;
   font-weight: 700;
 }
+
+.form-control.ng-touched.ng-invalid {
+  border-color: var(--error-color);
+  
+}
