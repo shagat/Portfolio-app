@@ -1,17 +1,18 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import { Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { DataStorageService } from "src/app/shared/data_storage.service";
 import { Work } from "../Work.model";
 import { WorksService } from "../works-service";
+import { CanComponentDeactivate } from "src/app/shared/can-deactivate-guard.service";
 
 @Component({
     selector: 'app-work-edit',
     templateUrl: 'work-edit.component.html',
     styleUrls: ['work-edit.component.css']
 })
-export class WorkEditComponent implements OnInit, OnDestroy {
+export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactivate {
     @ViewChild('workForm', { static: false }) wForm: NgForm;
     editedItemIndex: number = -1;
     editedItem: Work;
@@ -72,6 +73,14 @@ export class WorkEditComponent implements OnInit, OnDestroy {
 
     onStore() {
         this.dataStorageService.storeWorks()
+    }
+
+    canDeactivate(): boolean | Observable<boolean> | Promise<boolean> {
+        if (this.wForm.dirty && this.wForm.touched) {
+            return confirm('Do you want to discard the changes');
+        } else {
+            return true;
+        }
     }
 
     ngOnDestroy(): void {

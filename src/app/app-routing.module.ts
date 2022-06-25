@@ -8,15 +8,16 @@ import { WorksDetailsComponent } from './works/works-details/works-details.compo
 import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
 import { WorksResolverService } from './works/works-resolver.service';
+import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 
 const routes: Routes = [
   { path: '', component: HeroComponent, pathMatch: 'full' },
   {
     path: 'works', component: WorksComponent, children: [
       { path: '', component: WorksListComponent, resolve: [WorksResolverService] },
-      { path: 'new', component: WorkEditComponent },
+      { path: 'new', component: WorkEditComponent, canDeactivate: [CanDeactivateGuard] },
       { path: ':id', component: WorksDetailsComponent, resolve: [WorksResolverService] },
-      { path: ':id/edit', component: WorkEditComponent, resolve: [WorksResolverService] },
+      { path: ':id/edit', component: WorkEditComponent, resolve: [WorksResolverService] , canDeactivate: [CanDeactivateGuard] },
     ]
   },
   { path: 'contact', component: ContactComponent },
