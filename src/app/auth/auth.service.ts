@@ -1,4 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 export interface AuthResData{
     idToken: string;
     email: string;
@@ -11,7 +13,9 @@ export interface AuthResData{
     providedIn: 'root'
 })
 export class AuthService{
-    login(){
 
+    constructor(private httpClient: HttpClient, private router: Router){}
+    login(email: string, password: string){
+        return this.httpClient
     }
 }
