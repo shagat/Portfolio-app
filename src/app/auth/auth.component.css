@@ -1,0 +1,43 @@
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+
+.alert-box-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.alert-box-large {
+  height: 50vh;
+  width: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 50;
+}
+
+.alert-box {
+  width: 400px;
+  position: absolute;
+  top: 1.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px;
+  z-index: 100;
+  background: var(--dark-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.alert-box{
+    border-radius: 10px;
+}

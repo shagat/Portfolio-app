@@ -45,9 +45,10 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
     }
 
     onDelete() {
-        console.log('delete');
-        this.worksService.deleteWork(this.editedItemIndex);
-        this.onCancel();
+        if (confirm('Delte this item?')){
+            this.worksService.deleteWork(this.editedItemIndex);
+            this.onCancel();
+        }
     }
 
     ngOnInit(): void {
@@ -68,7 +69,6 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
             }, 0);
         } else {
             this.editMode = false;
-            // console.log(this.editMode)
         }
     }
 

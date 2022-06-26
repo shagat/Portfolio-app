@@ -9,6 +9,7 @@ import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
 import { WorksResolverService } from './works/works-resolver.service';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   { path: '', component: HeroComponent, pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: ':id/edit', component: WorkEditComponent, resolve: [WorksResolverService] , canDeactivate: [CanDeactivateGuard] },
     ]
   },
+  { path: 'login', component: AuthComponent },
   { path: 'contact', component: ContactComponent },
 ]
 @NgModule({
