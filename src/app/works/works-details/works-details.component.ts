@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Work } from '../Work.model';
 import { WorksService } from '../works-service';
 
@@ -10,15 +11,22 @@ import { WorksService } from '../works-service';
   styleUrls: ['./works-details.component.css']
 })
 export class WorksDetailsComponent implements OnInit, OnDestroy {
+  private userSub: Subscription;
+  subscription = new Subscription;
+
+  isAuth: boolean = false;
   work!: Work;
   id!: number;
-  subscription = new Subscription
-  constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router) { }
+
+  constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.work = this.worksService.getWork(this.id);
+    })
+    this.authService.user.subscribe(user => {
+      this.isAuth = !!user;
     })
   }
 

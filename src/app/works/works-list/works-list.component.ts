@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Work } from '../Work.model';
 import { WorksService } from '../works-service';
 
@@ -12,7 +13,10 @@ import { WorksService } from '../works-service';
 export class WorksListComponent implements OnInit, OnDestroy {
   works: Work[] = [];
   subscription = new Subscription;
-  constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router) { }
+  private userSub: Subscription;
+  isAuth = false;
+
+  constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.works = this.worksService.getWorks()
@@ -20,13 +24,21 @@ export class WorksListComponent implements OnInit, OnDestroy {
       this.works = works;
       console.log('This is from list - '+this.works[1].heading);
     })
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuth = !!user;
+    })
   }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+  
+  onLogout(){
+    this.authService.logout();
   }
 
   onAddNew(){
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+    this.userSub.unsubscribe();
   }
 }
