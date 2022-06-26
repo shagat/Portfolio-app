@@ -1,6 +1,6 @@
 <div class="box shadow" >
 <h4 class="heading-sub">{{work.heading}}</h4>
-<p class="paragraph-beige">{{work.details}}
+<p class="paragraph-beige">{{work.details | shorten:100}}
   <a [routerLink]="[index]" class="text-btn">Read more</a>
 </p>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     selector: 'app-login',
@@ -9,13 +10,39 @@ import { FormControl, Validators } from "@angular/forms";
     ]
 })
 export class AuthComponent {
-    email = new FormControl('', [Validators.required, Validators.email]);
-    password = new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{6, 20}$/)])
+    constructor(private router: Router, private route: ActivatedRoute){}
+authForm: FormGroup = new FormGroup({
 
-    getErrorMessage(){
-        if (this.email.hasError('required')) {
+    'email': new FormControl('', [
+        Validators.required, 
+        Validators.email
+    ]),
+    'password': new FormControl('', [
+        Validators.required, 
+        Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30})')
+    ]),
+});
+
+    onSubmit(){
+        console.log(this.authForm.value);
+        this.authForm.reset();
+    }
+
+    onClose(){
+        this.authForm.reset();
+        this.router.navigate(['works'])
+    }
+
+    getErrorMessage() {
+        if (this.authForm.get('email').hasError('required')) {
             return 'You must enter a value';
         }
-        return this.email.hasError('email') ? 'Not a valid email': '';
+        if (this.authForm.get('email').hasError('email')) {
+            return 'Not a valid email';
+        }
+        if (this.authForm.get('password').hasError('pattern')) {
+            return 'Password must contain uppercase, lowercase and more than 6 characters'
+        }
+        return '';
     }
 }
