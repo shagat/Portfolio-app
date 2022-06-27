@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  correctPath:boolean= true;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.route.pathFromRoot);
   }
 
 }

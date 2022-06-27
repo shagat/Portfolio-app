@@ -34,4 +34,5 @@ export class HeroComponent implements OnInit {
     onScrollClick(el: HTMLElement) {
         el.scrollIntoView({ behavior: 'smooth' });
     }
+
 }

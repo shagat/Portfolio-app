@@ -12,6 +12,7 @@ import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AboutResoloverService } from './home/abouts-resolver.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HeroComponent, pathMatch: 'full', resolve:[AboutResoloverService] },
@@ -23,6 +24,8 @@ const routes: Routes = [
   ] },
   { path: 'login', component: AuthComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'not-found', component: PageNotFoundComponent, data:{message: 'Page Not Found'}  },
+  { path: '**', redirectTo: '/not-found', pathMatch:'full' },
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
