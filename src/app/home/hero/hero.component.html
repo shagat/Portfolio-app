@@ -2,7 +2,7 @@
   <div class="main-container">
     <!-- hero image -->
     <div class="img-class">
-      <img [src]="imgSrc.imgLink" [alt]="imgSrc.imgName">
+      <img [src]="imgSrc" [alt]="imgName">
     </div>
     <!-- Animation class -->
     <div class="typing-animate-1">
@@ -13,4 +13,6 @@
     <i class="fa-solid fa-angles-down"></i>
   </div>
 </section>
-<app-home-about></app-home-about>
+<div *ngFor="let about of abouts">
+  <app-home-about  [heading]='about.name' [about_desc]='about.description'></app-home-about>
+</div>

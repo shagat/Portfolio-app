@@ -22,10 +22,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MaterialModule } from 'src/materials.module';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContactComponent,
     HeaderComponent,
     HeroComponent,
     HomeAboutComponent,

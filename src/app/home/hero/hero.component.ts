@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AboutService } from '../about.service';
+import { About } from '../About.model';
+import * as aboutService from '../about.service'
 
 @Component({
     selector: 'app-hero',
@@ -8,12 +9,17 @@ import { AboutService } from '../about.service';
 })
 export class HeroComponent implements OnInit {
     clickAnimate: boolean = true;
-    imgSrc: { imgName: string, imgLink: string } = { imgName: '', imgLink: '' };
+    imgSrc: string;
+    imgName: string;
+    abouts: About[];
 
-    constructor(private aboutService: AboutService) {
+    constructor() {
     }
     ngOnInit(): void {
-        this.imgSrc = this.aboutService.getImgSrc();
+        this.imgSrc = aboutService.imgSrc.imgLink
+        this.imgName = aboutService.imgSrc.imgName
+        this.abouts = aboutService.about;
+        console.log(this.abouts);
     }
 
     typingAnimateToggle() {
