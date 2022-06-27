@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import * as aboutService from '../home/about.service'
+import { environment } from "src/environments/environment";
 
 @Component({
     selector: 'app-contact',
@@ -10,7 +10,7 @@ import * as aboutService from '../home/about.service'
 export class ContactComponent implements OnInit{
     contacts = []
     ngOnInit(): void {
-        this.contacts = aboutService.contacts;
+        this.contacts = environment.contacts;
         console.log(this.contacts);
     }
 }

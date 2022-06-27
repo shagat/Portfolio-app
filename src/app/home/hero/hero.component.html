@@ -10,9 +10,10 @@
       </div>
     </div>
     <!-- scroll Down button -->
-    <i class="fa-solid fa-angles-down"></i>
+    <i class="fa-solid fa-angles-down" (click)="onScrollClick(nextSection)"></i>
   </div>
 </section>
+<span #nextSection></span>
 <div *ngFor="let about of abouts">
-  <app-home-about  [heading]='about.name' [about_desc]='about.description'></app-home-about>
+  <app-home-about   [heading]='about.name' [about_desc]='about.description'></app-home-about>
 </div>

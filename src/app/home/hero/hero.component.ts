@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { About } from '../About.model';
-import * as aboutService from '../about.service'
+import { environment } from 'src/environments/environment';
+import { AboutService } from '../about.service';
+import { DataStorageService } from 'src/app/shared/data_storage.service';
 
 @Component({
     selector: 'app-hero',
@@ -12,13 +14,13 @@ export class HeroComponent implements OnInit {
     imgSrc: string;
     imgName: string;
     abouts: About[];
-
-    constructor() {
-    }
+    
+    constructor(private aboutService: AboutService, private dataStorageService: DataStorageService) {}
+    
     ngOnInit(): void {
-        this.imgSrc = aboutService.imgSrc.imgLink
-        this.imgName = aboutService.imgSrc.imgName
-        this.abouts = aboutService.about;
+        this.imgSrc = environment.imgSrc.imgLink
+        this.imgName = environment.imgSrc.imgName
+        this.abouts = this.aboutService.getAbouts();;
         console.log(this.abouts);
     }
 
@@ -29,7 +31,7 @@ export class HeroComponent implements OnInit {
         }, 500);
     }
 
-    scrollDown(el: HTMLElement) {
+    onScrollClick(el: HTMLElement) {
         el.scrollIntoView({ behavior: 'smooth' });
     }
 }

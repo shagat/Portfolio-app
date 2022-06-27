@@ -11,23 +11,10 @@ import { WorksResolverService } from './works/works-resolver.service';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AboutResoloverService } from './home/abouts-resolver.service';
 
-// const routes: Routes = [
-//   { path: '', component: HeroComponent, pathMatch: 'full' },
-//   { path: 'works', component: WorksComponent, children: [
-//     { path: ':id', component: WorksDetailsComponent, resolve: [WorksResolverService] },
-//     {
-//       path: '', component: WorksListComponent, resolve: [WorksResolverService], children: [
-//         { path: 'new', component: WorkEditComponent},
-//         { path: ':id/edit', component: WorkEditComponent, resolve: [WorksResolverService], canDeactivate: [CanDeactivateGuard] },
-//       ]
-//     },
-//   ] },
-//   { path: 'login', component: AuthComponent },
-//   { path: 'contact', component: ContactComponent },
-// ]
 const routes: Routes = [
-  { path: '', component: HeroComponent, pathMatch: 'full' },
+  { path: '', component: HeroComponent, pathMatch: 'full', resolve:[AboutResoloverService] },
   { path: 'works', component: WorksComponent, children:[
     { path: '', component: WorksListComponent, resolve: [WorksResolverService] },
     { path: 'new', component: WorkEditComponent,canActivate:[AuthGuard] ,canDeactivate: [CanDeactivateGuard] },
