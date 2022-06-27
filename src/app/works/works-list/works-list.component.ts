@@ -22,7 +22,6 @@ export class WorksListComponent implements OnInit, OnDestroy {
     this.works = this.worksService.getWorks()
     this.subscription = this.worksService.workChanged.subscribe((works: Work[]) => {
       this.works = works;
-      console.log('This is from list - '+this.works[1].heading);
     })
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuth = !!user;

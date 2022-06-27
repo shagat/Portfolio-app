@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { AuthResData, AuthService } from "./auth.service";
 
 @Component({
     selector: 'app-login',
@@ -10,27 +12,54 @@ import { ActivatedRoute, Router } from "@angular/router";
     ]
 })
 export class AuthComponent {
-    constructor(private router: Router, private route: ActivatedRoute){}
-authForm: FormGroup = new FormGroup({
+    
+    isLoading = false;
+    error: string = null;
+    
 
-    'email': new FormControl('', [
-        Validators.required, 
-        Validators.email
-    ]),
-    'password': new FormControl('', [
-        Validators.required, 
-        Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30})')
-    ]),
-});
+    constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
+    
+    authForm: FormGroup = new FormGroup({
 
-    onSubmit(){
-        console.log(this.authForm.value);
+        'email': new FormControl('', [
+            Validators.required,
+            Validators.email
+        ]),
+        'password': new FormControl('', [
+            Validators.required,
+            Validators.pattern('((?=.*[a-z])(?=.*[A-Z]).{6,30})')
+        ]),
+    });
+
+    onSubmit() {
+        if (this.authForm.invalid){
+            return;
+        }
+        const email = this.authForm.get('email').value;
+        const password = this.authForm.get('password').value;
+
+        let authObs: Observable<AuthResData>;
+        this.isLoading = true;
+        authObs = this.authService.login(email, password);
+        authObs.subscribe(responseData => {
+            this.isLoading = false;
+            this.router.navigate(['/works']);    
+        }, errorMsg => {
+            console.log(errorMsg);
+            this.error = errorMsg;
+            this.isLoading = false;
+        });
+        this.error = null;
         this.authForm.reset();
     }
 
-    onClose(){
+    onClose() {
         this.authForm.reset();
         this.router.navigate(['works'])
+    }
+
+    onHandleError(){
+        this.error = null;
     }
 
     getErrorMessage() {

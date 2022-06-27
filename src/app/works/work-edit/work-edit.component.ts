@@ -20,6 +20,7 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
     subscription = new Subscription;
     editMode = false;
 
+
     constructor(private router: Router, private route: ActivatedRoute, private worksService: WorksService, private dataStorageService: DataStorageService) { }
 
     onSubmit() {
@@ -82,7 +83,6 @@ export class WorkEditComponent implements OnInit, OnDestroy, CanComponentDeactiv
 
     ngOnDestroy(): void {
         this.subscription.unsubscribe();
-        console.log('From the onDestroy method of work-edit')
-        this.dataStorageService.storeAndFetch();
+        this.dataStorageService.fetchWorks();
     }
 }

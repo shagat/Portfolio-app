@@ -34,19 +34,6 @@
   color: var(--light-color);
 }
 
-.alert-box {
-  width: 400px;
-  position: absolute;
-  top: 1.5vh;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 16px;
-  z-index: 100;
-  background: var(--dark-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
-
 .alert-box .btn{
   margin-top: 3em;
 }

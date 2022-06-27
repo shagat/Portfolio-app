@@ -4,9 +4,9 @@
       <h2 >Some of my works</h2>
     </div>
     <div class="login-btn">
-      <a routerLink="/new" *ngIf="isAuth">add_new</a>
+      <a routerLink="new" *ngIf="isAuth">add_new</a>
       <a (click)="onLogout()" *ngIf="isAuth">logout</a>
-      <a routerLink="/login">login</a>
+      <a routerLink="/login" *ngIf="!isAuth">login</a>
     </div>
     <div class="grid-card">
       <app-work-item *ngFor="let workEl of works; let i = index" [work]="workEl" [index]="i"></app-work-item>

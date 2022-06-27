@@ -14,10 +14,10 @@ export class WorksResolverService implements Resolve<Work[]>{
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Work[] | Observable<Work[]> | Promise<Work[]> {
         const works = this.worksService.getWorks()
         if (works.length === 0) {
-            console.log('This is the work of a Resolver')
+            // console.log('This is the work of a Resolver')
             return this.dataStorageService.fetchWorks();
         } else {
-            console.log('This is the work of a Resolver')
+            // console.log('This is the work of a Resolver')
             return works;
         }
     }

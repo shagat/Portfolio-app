@@ -16,10 +16,12 @@ import { WorksComponent } from './works/works.component';
 import { WorkEditComponent } from './works/work-edit/work-edit.component';
 import { WorkItemComponent } from './works/work-item/work-item.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingSpinner } from './shared/loading-spinner.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MaterialModule } from 'src/materials.module';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AlertComponent } from './shared/alert.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { MaterialModule } from 'src/materials.module';
     WorkEditComponent,
     AuthComponent,
     ShortenPipe,
-    LoadingSpinner
+    LoadingSpinner,
+    AlertComponent
 
   ],
   imports: [
@@ -48,7 +51,7 @@ import { MaterialModule } from 'src/materials.module';
     MatFormFieldModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

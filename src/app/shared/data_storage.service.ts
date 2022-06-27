@@ -25,13 +25,7 @@ export class DataStorageService {
         ).pipe(
              tap(works => {
                 this.worksService.setWorks(works);
-                console.log(works);
             })
         )
-    }
-
-    storeAndFetch() {
-        this.storeWorks();
-        this.fetchWorks();
     }
 }

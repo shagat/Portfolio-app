@@ -25,7 +25,7 @@ export class AuthService {
     constructor(private httpClient: HttpClient, private router: Router) { }
 
     login(email: string, password: string) {
-        return this.httpClient.post<AuthResData>('https://my-protfolio-fb050-default-rtdb.asia-southeast1.firebasedatabase.app/' + environment.firebaseApiKey, {
+        return this.httpClient.post<AuthResData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseApiKey, {
             email: email,
             password: password,
             returnSecureToken: true
@@ -102,13 +102,13 @@ export class AuthService {
         }
         switch (errorRes.error.error.message) {
             case 'EMAIL_EXISTS':
-                errorMsg = 'Email already exists.';
+                errorMsg = 'Email already exists. Try to login instead.';
                 break;
             case 'EMAIL_NOT_FOUND':
-                errorMsg = 'The email is not valid.';
+                errorMsg = 'The email is not valid. Please check your email and try again';
                 break;
             case 'INVALID_PASSWORD':
-                errorMsg = 'The password is incorrect.';
+                errorMsg = 'The password is incorrect. Please check the password and try again.';
                 break;
         }
         return throwError(() => {

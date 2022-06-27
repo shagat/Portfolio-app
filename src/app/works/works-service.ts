@@ -1,6 +1,5 @@
-import { Inject, Injectable, Injector } from "@angular/core";
+import { Injectable} from "@angular/core";
 import { Subject } from "rxjs";
-import { DataStorageService } from "../shared/data_storage.service";
 import { Work } from "./Work.model";
 
 @Injectable({
@@ -8,7 +7,7 @@ import { Work } from "./Work.model";
 })
 export class WorksService {
     workChanged = new Subject<Work[]>();
-    startedEditing = new Subject<number>();
+    // startedEditing = new Subject<number>();
     private works: Work[] = []
 
 constructor(){}

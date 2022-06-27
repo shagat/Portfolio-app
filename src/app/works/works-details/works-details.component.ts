@@ -21,12 +21,12 @@ export class WorksDetailsComponent implements OnInit, OnDestroy {
   constructor(private worksService: WorksService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.user.subscribe(user => {
+      this.isAuth = !!user;
+    })
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.work = this.worksService.getWork(this.id);
-    })
-    this.authService.user.subscribe(user => {
-      this.isAuth = !!user;
     })
   }
 
@@ -35,11 +35,11 @@ export class WorksDetailsComponent implements OnInit, OnDestroy {
   }
 
   onEdit() {
-    this.worksService.startedEditing.next(this.id);
+    // this.worksService.startedEditing.next(this.id);
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.userSub.unsubscribe();
   }
 }
