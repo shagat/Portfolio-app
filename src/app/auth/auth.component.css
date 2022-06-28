@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px;
-  padding: 16px;
+  margin: 12px;
+  padding: 13px;
   border-radius: 8px;
   flex-direction: column;
 }
@@ -27,20 +27,24 @@
   z-index: 50;
 }
 .btn-close{
-  position: absolute;
-  right: 21%;
-  top: 1.5vh;
-  scale: 1.1;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   color: var(--light-color);
+}
+
+.alert-box{
+  width: fit-content;
 }
 
 .alert-box .btn{
   margin-top: 3em;
 }
 
+
 form{
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 250px;
+  height: 40%;
 }

@@ -45,3 +45,21 @@ label {
   border-color: var(--error-color);
   
 }
+
+@media (max-width:550px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    scale: 0.8;
+  }
+  .form-btn {
+    display: flex;
+    scale: 0.8;
+  }
+  .form-heading {
+    margin-top: auto;
+  }
+}

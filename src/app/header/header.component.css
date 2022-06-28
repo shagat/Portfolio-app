@@ -1,5 +1,5 @@
 .nav-container {
-    position: fixed;
+    position: absolute;
     left: 50%;
     transform: translate(-50%);
     top: .1em;
@@ -15,7 +15,7 @@
     display: flex;
     position: relative;
     background-color: var(--mid-beige-color);
-    box-shadow: 0 0 3px 1 rgba(var(--primary-color), 0.15), 0 6px 12px 0 rgba(var(--primary-color), 0.15);
+    box-shadow: 0 0 3px 1 rgba(var(--light-color), 0.15), 0 6px 12px 0 rgba(var(--dark-color), 0.15);
     padding: 0.75rem;
     border-radius: 2em;
   }
@@ -69,5 +69,14 @@
     z-index: 1;
     border-radius: 99px;
     transition: 0.25s ease-out;
+  }
+
+  @media (max-width: 550px) {
+    .nav-container{
+      left: 50%;
+      transform: translate(-60.5%);
+      scale: .8;
+
+    }
   }
   

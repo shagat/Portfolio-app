@@ -10,7 +10,7 @@
   flex-direction: column;
   height: 100%;
   position: relative;
-  top: 10%;
+  top: 8%;
 }
 
 .project_desc p{
@@ -38,4 +38,11 @@
 
 i {
   scale: 1.2;
+}
+
+@media (max-width:550px) {
+  
+  .project_desc p {
+    font-size: 14px;
+  }
 }

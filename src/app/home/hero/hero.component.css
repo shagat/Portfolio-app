@@ -1,17 +1,16 @@
 .img-class img {
-  height: 350px;
-  width: 220px;
-  position: absolute;
+  height: 34vh;
+  width: auto;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
-  top: 10em;
+  top: 15vh;
   border: .5px solid var(--mid-light-color);
   z-index: 0;
 }
 .typing-animate-1 {
   position: absolute;
-  /* top: 37em; */
-  top: 62%;
+  top: 37em;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -113,4 +112,9 @@ i {
   }
 }
 
-/* Animation for typing animation -2 */
+@media (max-width:550px) {
+  .typing-animate-1{
+    scale: .8;
+    transform: translateX(-60%);
+  }
+}

@@ -9,9 +9,10 @@ and also import other style files *,
 
 :root {
   --primary-color: #E0DDAA;
+  --light-blue-color: #3AB0FF;
   --secondary-color: #203239;
   --dark-color: #141E27;
-  --light-color: #EEEDDE;
+  --light-color: #D29D2B;
   --mid-beige-color: #CC9544;
   --mid-light-color: #FFE4C4;
   --success-color: #5cb85c;
@@ -25,7 +26,6 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 html {
@@ -34,17 +34,19 @@ html {
 }
 
 body {
-  background-color: var(--dark-color);
   font-family: 'Courier New', Courier, monospace;
+  background-color: var(--dark-color);
 }
 
 
 section {
-  display: flex;
-  width: 100%;
-  align-content: center;
-  justify-content: center;
+  width: 100vw;
+  max-width: 800px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100vh;
+  background-color: var(--dark-color);
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
@@ -53,12 +55,9 @@ section {
 
 .main-container {
   display: relative;
-  width: 860px;
-  height: 740px;
-  margin: 40px;
-  padding: 10px;
+  height: 90%;
+  margin: 5vh;
   border: 2px solid var(--mid-light-color);
-  margin-top: 3em;
   font-family: monospace;
 }
 
@@ -72,8 +71,9 @@ section {
 
 .box-heading {
   display: grid;
+  margin: 4%;
   grid-template-columns: .5fr .5fr 1fr .5fr .5fr;
-  height: 120px;
+  height: 10%;
 }
 
 .box-heading> :first-child {
@@ -316,4 +316,12 @@ img {
   50% {
     border-color: transparent;
   }
+}
+
+@media (max-width: 550) {
+  /* .main-container {
+    width: 550px;
+    height: 600px;
+  } */
+
 }
