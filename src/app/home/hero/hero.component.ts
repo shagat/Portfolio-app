@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { About } from '../About.model';
 import { environment } from 'src/environments/environment';
 import { AboutService } from '../about.service';
-import { DataStorageService } from 'src/app/shared/data_storage.service';
 
 @Component({
     selector: 'app-hero',
@@ -15,13 +14,12 @@ export class HeroComponent implements OnInit {
     imgName: string;
     abouts: About[];
     
-    constructor(private aboutService: AboutService, private dataStorageService: DataStorageService) {}
+    constructor(private aboutService: AboutService) {}
     
     ngOnInit(): void {
         this.imgSrc = environment.imgSrc.imgLink
         this.imgName = environment.imgSrc.imgName
-        this.abouts = this.aboutService.getAbouts();;
-        console.log(this.abouts);
+        this.abouts = this.aboutService.getAbouts();
     }
 
     typingAnimateToggle() {

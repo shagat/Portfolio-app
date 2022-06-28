@@ -1,13 +1,18 @@
 <section>
-  <div class="main-container grid">
-    <div class="about_img">
-      <img src="https://i.postimg.cc/fb9L4GyZ/pass-port-old-original.jpg" alt="about_img">
-      <div>
-        <mat-list class="project_desc">
-          <mat-list-item *ngFor="let contact of contacts">
-            <div mat-line>{{contact}}</div>
-          </mat-list-item>
-        </mat-list>
+  <div class="main-container">
+    <div class="main-container-content">
+
+      <div class="project_desc">
+        <p>
+          This page was made using Angular. It looks kinda empty but it has some good features. I can add new projects,
+          edit or delete existing projects. I can even change the 'about me' in the home page without jumping back into
+          development because it gets all its data from an api in firebase. Its my simply strong Portfolio App.
+        </p>
+      </div>
+      <div class="project_desc_links">
+        <i class="fa-solid fa-at"></i><p>{{mailLink}} </p>
+        <i class="fa-brands fa-linkedin-in"></i><p>{{linkdLink}} </p>
+        <i class="fa-brands fa-github"></i><p>{{gitLink}} </p>
       </div>
     </div>
   </div>
