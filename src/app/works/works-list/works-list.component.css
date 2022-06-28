@@ -15,7 +15,7 @@
 .box-heading {
   display: grid;
   grid-template-columns:.5fr .5fr 1fr .5fr .5fr;
-  height: 10vw;
+  height: 2%;
   margin-top: 10%;
 }
 
