@@ -301,27 +301,10 @@ img {
   vertical-align: middle;
 }
 
-.img-responsive,
-.thumbnail>img,
-.thumbnail a>img,
-.carousel-inner>.item>img,
-.carousel-inner>.item>a>img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
 
 /* Animation */
 @keyframes writer {
   50% {
     border-color: transparent;
   }
-}
-
-@media (max-width: 550) {
-  /* .main-container {
-    width: 550px;
-    height: 600px;
-  } */
-
 }
