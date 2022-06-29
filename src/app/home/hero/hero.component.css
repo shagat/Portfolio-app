@@ -10,7 +10,8 @@
 }
 .typing-animate-1 {
   position: absolute;
-  top: 37em;
+  /* top: 37em; */
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
 }
