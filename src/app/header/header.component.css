@@ -21,7 +21,8 @@
   border-radius: 2em;
 }
 
-.tabs .tab {
+.tabs .tab{
+  color: var(--dark-color);
   z-index: 2;
 }
 
@@ -44,7 +45,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+label {
-  color: var(--light-color);
+  color: var(--light-text-color);
 }
 
 input[type="radio"]:hover+label {
