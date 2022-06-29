@@ -10,6 +10,7 @@
 }
 .typing-animate-1 {
   position: absolute;
+  font-family: 'Courier Prime', monospace;
   /* top: 37em; */
   top: 60%;
   left: 50%;
@@ -33,7 +34,6 @@ i {
   border-right: 0.1em solid var(--mid-light-color);
   font-size: 1.6em;
   padding: 2.5px;
-  font-family: monospace;
   animation: type 2.5s steps(22),
     writer 1s infinite alternate,
     delete .5s steps(5) 2.5s,
@@ -116,6 +116,6 @@ i {
 @media (max-width:550px) {
   .typing-animate-1{
     scale: .8;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
   }
 }

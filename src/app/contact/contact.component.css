@@ -1,33 +1,34 @@
-
 .project_desc {
   display: flex;
   position: relative;
   padding: 2em;
   margin: 1em;
 }
-.main-container-content{
+
+.main-container-content {
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100%;
-  position: relative;
-  top: 8%;
+  top: 5%;
 }
 
-.project_desc p{
+.project_desc p {
   color: var(--primary-color);
   text-align: center;
   font-size: 13px;
 }
 
-.project_desc h4{
+.project_desc h4 {
   text-align: center;
 }
-.project_desc_links p{
+
+.project_desc_links p {
   text-align: center;
   font-size: medium;
 }
 
-.project_desc_links{
+.project_desc_links {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -41,8 +42,10 @@ i {
 }
 
 @media (max-width:550px) {
-  
+
   .project_desc p {
     font-size: 14px;
+    /* padding: 0.8em; */
+    /* margin: .4em; */
   }
 }

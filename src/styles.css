@@ -13,6 +13,7 @@ and also import other style files *,
   --secondary-color: #203239;
   --dark-color: #141E27;
   --light-color: #D29D2B;
+  --light-text-color: #F2EBE9;
   --mid-beige-color: #CC9544;
   --mid-light-color: #FFE4C4;
   --success-color: #5cb85c;
@@ -35,6 +36,7 @@ html {
 
 body {
   font-family: 'Courier Prime', monospace;
+  font-weight: 400;
   background-color: var(--dark-color);
 }
 
@@ -58,7 +60,6 @@ section {
   height: 90%;
   margin: 5vh;
   border: 2px solid var(--mid-light-color);
-  font-family: monospace;
 }
 
 .main-container-mid {
@@ -136,7 +137,7 @@ section {
 .text-btn {
   display: inline-block;
   cursor: pointer;
-  color: var(--dark-color);
+  color: var(--mid-light-color);
   border: none;
 }
 
@@ -155,7 +156,7 @@ section {
   margin: 1px;
   font-weight: normal;
   background: var(--mid-beige-color);
-  color: var(--dark-color);
+  color: var(--light-text-color);
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -210,9 +211,9 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 
-a {
+a, a::before, a::after {
   text-decoration: none;
-  color: var(--dark-color);
+  color: var(--primary-color);
   border-right: 2px solid var(--primary-color);
   cursor: pointer;
 }
