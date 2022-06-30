@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "my-protfolio-fb050"
-  }
+    "default": "my-protfolio-fb050",
+    "portfolio-app": "my-protfolio-fb050"
+  },
+  "targets": {}
 }
