@@ -5,6 +5,9 @@
   grid-template-rows: 1fr;
   gap: 10px 15px;
 }
+.main-container{
+  overflow-y:scroll ;
+}
 
 
 .login-btn{
