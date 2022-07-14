@@ -21,7 +21,7 @@
   border-radius: 2em;
 }
 
-.tabs .tab{
+.tabs .tab {
   color: var(--dark-color);
   z-index: 2;
 }

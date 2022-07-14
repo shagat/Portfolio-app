@@ -3,8 +3,12 @@
   padding: 10px;
   border: 2px solid var(--mid-light-color);
   margin-top: 3em;
-  height:10%;
+  height: 10%;
   width: fit-content;
+}
+
+.main-container {
+  overflow-y: scroll;
 }
 
 .grid {

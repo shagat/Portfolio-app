@@ -5,24 +5,25 @@
   grid-template-rows: 1fr;
   gap: 10px 15px;
 }
-.main-container{
-  overflow-y:scroll ;
+
+.main-container {
+  overflow-y: scroll;
 }
 
 
-.login-btn{
+.login-btn {
   position: relative;
   text-align: end;
 }
 
 .box-heading {
   display: grid;
-  grid-template-columns:.5fr .5fr 1fr .5fr .5fr;
+  grid-template-columns: .5fr .5fr 1fr .5fr .5fr;
   height: 2%;
   margin-top: 10%;
 }
 
-.box-heading > h2{
+.box-heading>h2 {
   width: 100%;
   align-items: center;
   grid-column: 3;
@@ -34,23 +35,25 @@
   color: var(--mid-light-color);
 }
 
-.login-btn > a {
+.login-btn>a {
   margin: 5px;
   margin-right: 15px;
 }
 
 @media (max-width: 550px) {
-  .grid-card{
+  .grid-card {
     grid-template-columns: 1fr;
     grid-auto-columns: auto;
     gap: 10px;
   }
-  .box-heading{
+
+  .box-heading {
     height: fit-content;
     scale: 0.8;
   }
-  .login-btn{
+
+  .login-btn {
     scale: 0.9;
   }
-  
+
 }
