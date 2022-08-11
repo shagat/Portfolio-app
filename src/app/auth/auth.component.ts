@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormControl, UntypedFormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { AuthResData, AuthService } from "./auth.service";
@@ -19,13 +19,13 @@ export class AuthComponent {
 
     constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
     
-    authForm: FormGroup = new FormGroup({
+    authForm: UntypedFormGroup = new UntypedFormGroup({
 
-        'email': new FormControl('', [
+        'email': new UntypedFormControl('', [
             Validators.required,
             Validators.email
         ]),
-        'password': new FormControl('', [
+        'password': new UntypedFormControl('', [
             Validators.required,
             Validators.pattern('((?=.*[a-z])(?=.*[A-Z]).{6,30})')
         ]),
