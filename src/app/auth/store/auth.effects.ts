@@ -1,9 +1,12 @@
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { Injectable } from '@angular/core';
 import * as AuthActions from './auth.actions';
-import { tap, of } from 'rxjs';
+import { tap, of, switchMap, map, catchError } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../user.model';
+import { environment } from 'src/environments/environment';
 
 export interface AuthResponseData {
   idToken: string;
@@ -33,12 +36,31 @@ const handleError = (errorRes: any) => {
   return of(AuthActions.authenticateFail({ errorMessage: errorMsg }));
 };
 
+const handleAuthentication = (
+  expiresIn: number,
+  email: string,
+  userId: string,
+  token: string
+) => {
+  const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
+  const user = new User(email, userId, token, expirationDate);
+  localStorage.setItem('userData', JSON.stringify(user));
+  return AuthActions.authenticateSuccess({
+    email: email,
+    userId: userId,
+    token: token,
+    expirationDate: expirationDate,
+    redirect: true,
+  });
+};
+
 @Injectable()
 export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
   authLogout$ = createEffect(
@@ -52,5 +74,36 @@ export class AuthEffects {
         })
       ),
     { dispatch: false }
+  );
+
+  authLogin = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loginStart),
+      switchMap((authData) => {
+        return this.http.post<AuthResponseData>(
+          'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+            environment.firebaseApiKey,
+          {
+            email: authData.email,
+            password: authData.password,
+            returnSecureToken: true,
+          }
+        ).pipe(tap(
+          (resData) => {
+            this.authService.setLogoutTimer(+resData.expiresIn * 1000);
+          }
+        ), map((resData) => {
+          return handleAuthentication(
+            +resData.expiresIn,
+            resData.email,
+            resData.localId,
+            resData.idToken
+          );
+        }),
+        catchError((err) => {
+          return handleError(err);
+        }))
+      })
+    )
   );
 }

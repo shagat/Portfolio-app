@@ -69,6 +69,12 @@ export class AuthService {
     this.tokenExpirationTimer = null;
   }
 
+  setLogoutTimer(expirationDuration: number) {
+    // this.tokenExpirationTimer = setTimeout(() => {
+    //     this.store.dispatch( AuthActions.logout())
+    // }, expirationDuration);
+}
+
   autoLogin() {
     const userData: {
       email: string;
