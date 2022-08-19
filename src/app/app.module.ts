@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { EffectsModule } from '@ngrx/effects';
     SharedModule,
     HttpClientModule,
     CoreModule,
-    EffectsModule.forRoot([])
+    // StoreModule.forRoot(),
+    // EffectsModule.forRoot([AuthEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
